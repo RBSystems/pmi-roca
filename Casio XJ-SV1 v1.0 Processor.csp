@@ -1,0 +1,101 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+  (Fill in comments below)
+*******************************************************************************************/
+/*
+Dealer Name:	Crestron Electronics
+System Name:
+System Number:
+Programmer:		PAC
+Comments:
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+  (Uncomment and declare compiler directives as needed)
+*******************************************************************************************/
+#SYMBOL_NAME "Casio XJ-SV1 v1.0 Processor"
+// #HINT ""
+#DEFINE_CONSTANT	csLAMPREQUEST		"0-2100"
+#DEFINE_CONSTANT	csVOLUMEREQUEST		"0-50"
+
+#DEFINE_CONSTANT	ciLAMPHOURS			1
+
+// #CATEGORY ""
+#CATEGORY "0" // HIDDEN
+// #DEFAULT_VOLATILE
+#DEFAULT_NONVOLATILE
+
+#HELP_BEGIN
+	For use inside the Casio XJ-SV1 v1.0 module only.
+#HELP_END
+
+/*******************************************************************************************
+  DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+  (Uncomment and declare inputs and outputs as needed)
+*******************************************************************************************/
+DIGITAL_INPUT	process_data;
+BUFFER_INPUT	from_device$[250];
+
+//STRING_OUTPUT	to_device$;
+ANALOG_OUTPUT	feedback_out, volume_out;
+
+/*******************************************************************************************
+  Global Variables
+  (Uncomment and declare global variables as needed)
+  Note:  Be sure to initialize all declared STRING variables as needed
+         For example, in Function Main: myString = "";
+*******************************************************************************************/
+INTEGER	iFlag1, iComma, iTempValue, iRequest;
+STRING	sTemp[25];
+
+/*******************************************************************************************
+  Event Handlers
+  (Uncomment and declare additional event handlers as needed)
+*******************************************************************************************/
+PUSH process_data
+{
+	if(iFlag1 = 0)
+	{
+		iFlag1 = 1;
+		while(find(")", from_device$) > 0)
+		{
+			sTemp = remove(")", from_device$);
+			if(find(csLAMPREQUEST, sTemp) > 0)
+			{
+				if(find(",", sTemp) > 0)
+				{
+					iComma = find(",", sTemp);
+					iTempValue = atoi(right(sTemp, (len(sTemp) - iComma)));
+					feedback_out = iTempValue;
+					iRequest = 0;
+				}
+			}
+			if(find(csVOLUMEREQUEST, sTemp) > 0)
+			{
+				if(find(",", sTemp) > 0)
+				{
+					iComma = find(",", sTemp);
+					iTempValue = atoi(right(sTemp, (len(sTemp) - iComma)));
+					volume_out = iTempValue;
+					iRequest = 0;
+				}
+			}
+			else
+			{
+				sTemp = "";
+			}
+		}
+
+		iFlag1 = 0;
+	}
+}
+/*******************************************************************************************
+  Main()
+  Uncomment and place one-time startup code here
+  (This code will get called when the system starts up)
+*******************************************************************************************/
+Function Main()
+{
+	iFlag1 = 0;
+}

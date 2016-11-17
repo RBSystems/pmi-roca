@@ -1,0 +1,26 @@
+/* CSS created with Spider Writer */
+
+<STYLE TYPE="text/css">
+  H1 { font-size: x-large; color: red; margin:10}
+  H2 { font-size: large; color: Blue }
+  
+.text
+{
+  position:absolute;
+  visibility:visible;
+  font-Family: Arial;
+}
+.input
+{
+	position:absolute;
+}
+.submit
+{
+	position:absolute;
+}
+.image
+{
+	vertical-align:top;
+	position:absolute;
+}
+</STYLE>

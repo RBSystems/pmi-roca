@@ -1,0 +1,3449 @@
+[
+Version=1
+]
+[
+ObjTp=FSgntr
+Sgntr=UserMacro
+RelVrs=2.12.39
+IntStrVrs=2
+MinSMWVrs=2.02.05
+MinTIOVrs=0
+SavedBy=SMW2.12.39
+]
+[
+ObjTp=Hd
+S0Nd=1
+S1Nd=2
+SLNd=3
+PrNm=PJLINK v1.0.umc
+CmVr=2.12
+DbVr=22.00.012.00
+DvcDbVr=28.05.004.00
+OpVr=PRO2 4.001.1012 (Feb 17 2009)
+PgmNm=BVD
+DlrNm=Crestron International
+CltNm=PJLINK
+Incl=362,378,380,405,407,408,409,478,522,537,554,586,590,611,624,767,830,883,1032,1062,1079,1134,1157,1199,1220,1222,1299,1348,1439,1472,1473,1499,1746,1803,1975,2229,
+McNm=PJLINK v1.0
+SmVr=669
+DvVr=669
+TpN1=1
+TpN2=2
+TpN3=3
+TpN4=4
+TpN5=5
+PdfHelp=PJLink v1.0 Help.pdf
+DT=(Logic)
+DST=Logic
+Mfg=PJLINK
+NumMdl=1
+Mdl1=PJLINK v1.0
+APg=0
+StdCmd=0
+FltTmp=1
+FpCS=0
+]
+[
+ObjTp=Bk
+Nm1=\
+Sx1=0
+Sy1=0
+Mx1=0
+]
+[
+ObjTp=Bw
+H=1
+Lx=0
+Ly=0
+Rx=604
+Ry=968
+Xm=-1
+Ym=-1
+SH=6
+Z=100
+Ht=3
+Hi=3
+]
+[
+ObjTp=Symbol
+Name=PJLINK v1.0
+Code=1
+SmplCName=PJLINK v1.0.umc
+Smpl-C=3
+CompilerTimePrecision=Single_Or_Double_Precision
+Exclusions=1,19,20,21,88,89,167,168,179,213,214,215,216,217,225,226,248,249,266,267,310,718,756,854,
+Hint=PJLINK
+SMWRev=2.02.05
+TIORev=0
+S+=1
+HelpID=1055
+PdfHelp=PJLink v1.0 Help.pdf
+DT=(Logic)
+DST=Logic
+Mfg=PJLINK
+NumMdl=1
+Mdl1=PJLINK v1.0
+APg=0
+StdCmd=0
+FltTmp=1
+FpCS=0
+NumFixedInputs=66
+NumFixedOutputs=82
+NumFixedParams=3
+MinVariableInputs=0
+MinVariableInputsList2=0
+MinVariableInputsList3=0
+MinVariableOutputs=0
+MinVariableOutputsList2=0
+MinVariableOutputsList3=0
+MinVariableParams=0
+SymbolTree=4
+InputSigType1=Digital
+InputSigType2=Digital
+InputSigType3=Digital
+InputSigType4=Digital|Analog|Serial|String
+InputSigType5=Digital
+InputSigType6=Digital
+InputSigType7=Digital
+InputSigType8=Digital
+InputSigType9=Digital
+InputSigType10=Digital
+InputSigType11=Digital
+InputSigType12=Digital|Analog|Serial|String
+InputSigType13=Digital
+InputSigType14=Digital
+InputSigType15=Digital|Analog|Serial|String
+InputSigType16=Digital
+InputSigType17=Digital|Analog|Serial|String
+InputSigType18=Digital
+InputSigType19=Digital
+InputSigType20=Digital
+InputSigType21=Digital
+InputSigType22=Digital
+InputSigType23=Digital
+InputSigType24=Digital
+InputSigType25=Digital
+InputSigType26=Digital
+InputSigType27=Digital|Analog|Serial|String
+InputSigType28=Digital
+InputSigType29=Digital
+InputSigType30=Digital
+InputSigType31=Digital
+InputSigType32=Digital
+InputSigType33=Digital
+InputSigType34=Digital
+InputSigType35=Digital
+InputSigType36=Digital
+InputSigType37=Digital|Analog|Serial|String
+InputSigType38=Digital
+InputSigType39=Digital
+InputSigType40=Digital
+InputSigType41=Digital
+InputSigType42=Digital
+InputSigType43=Digital
+InputSigType44=Digital
+InputSigType45=Digital
+InputSigType46=Digital
+InputSigType47=Digital|Analog|Serial|String
+InputSigType48=Digital
+InputSigType49=Digital
+InputSigType50=Digital
+InputSigType51=Digital
+InputSigType52=Digital
+InputSigType53=Digital
+InputSigType54=Digital
+InputSigType55=Digital
+InputSigType56=Digital
+InputSigType57=Digital|Analog|Serial|String
+InputSigType58=Digital
+OutputSigType1=Digital
+OutputSigType2=Digital
+OutputSigType3=Digital
+OutputSigType4=Digital
+OutputSigType5=Digital
+OutputSigType6=Digital|Analog|Serial|String
+OutputSigType7=Digital
+OutputSigType8=Digital|Analog|Serial|String
+OutputSigType9=Digital
+OutputSigType10=Digital
+OutputSigType11=Digital|Analog|Serial|String
+OutputSigType12=Digital|Analog|Serial|String
+OutputSigType13=Digital
+OutputSigType14=Digital
+OutputSigType15=Analog
+OutputSigType16=Analog
+OutputSigType17=Digital|Analog|Serial|String
+OutputSigType18=Digital
+OutputSigType19=Digital
+OutputSigType20=Digital
+OutputSigType21=Digital
+OutputSigType22=Digital
+OutputSigType23=Digital
+OutputSigType24=Digital
+OutputSigType25=Digital
+OutputSigType26=Digital
+OutputSigType27=Digital|Analog|Serial|String
+OutputSigType28=Digital
+OutputSigType29=Digital
+OutputSigType30=Digital
+OutputSigType31=Digital
+OutputSigType32=Digital
+OutputSigType33=Digital
+OutputSigType34=Digital
+OutputSigType35=Digital
+OutputSigType36=Digital
+OutputSigType37=Digital|Analog|Serial|String
+OutputSigType38=Digital
+OutputSigType39=Digital
+OutputSigType40=Digital
+OutputSigType41=Digital
+OutputSigType42=Digital
+OutputSigType43=Digital
+OutputSigType44=Digital
+OutputSigType45=Digital
+OutputSigType46=Digital
+OutputSigType47=Digital|Analog|Serial|String
+OutputSigType48=Digital
+OutputSigType49=Digital
+OutputSigType50=Digital
+OutputSigType51=Digital
+OutputSigType52=Digital
+OutputSigType53=Digital
+OutputSigType54=Digital
+OutputSigType55=Digital
+OutputSigType56=Digital
+OutputSigType57=Digital|Analog|Serial|String
+OutputSigType58=Digital
+OutputSigType59=Digital
+OutputSigType60=Digital
+OutputSigType61=Digital
+OutputSigType62=Digital
+OutputSigType63=Digital
+OutputSigType64=Digital
+OutputSigType65=Digital
+OutputSigType66=Digital
+OutputSigType67=Digital|Analog|Serial|String
+OutputSigType68=Digital
+OutputSigType69=Digital
+OutputSigType70=Digital
+OutputSigType71=Digital
+OutputSigType72=Digital
+OutputSigType73=Digital
+OutputSigType74=Digital
+OutputSigType75=Digital
+OutputSigType76=Digital
+OutputSigType77=Digital
+OutputSigType78=Digital
+OutputSigType79=Digital
+OutputSigType80=Digital|Analog|Serial|String
+OutputSigType81=Digital
+OutputSigType82=Analog
+ParamSigType1=Constant
+ParamSigType2=String
+ParamSigType3=String
+InputCue1=Power_On
+InputCue2=Power_Off
+InputCue3=Request_Power_Status
+InputCue4=[~UNUSED~]
+InputCue5=Video_Mute_On
+InputCue6=Video_Mute_Off
+InputCue7=Audio_Mute_On
+InputCue8=Audio_Mute_Off
+InputCue9=Video_And_Audio_Mute_On
+InputCue10=Video_And_Audio_Mute_Off
+InputCue11=Request_Mute_Status
+InputCue12=[~UNUSED~]
+InputCue13=Request_Lamps_Status
+InputCue14=Request_Error_Status
+InputCue15=[~UNUSED~]
+InputCue16=Request_Input_Status
+InputCue17=[~UNUSED~]
+InputCue18=Select_Input_RGB_1
+InputCue19=Select_Input_RGB_2
+InputCue20=Select_Input_RGB_3
+InputCue21=Select_Input_RGB_4
+InputCue22=Select_Input_RGB_5
+InputCue23=Select_Input_RGB_6
+InputCue24=Select_Input_RGB_7
+InputCue25=Select_Input_RGB_8
+InputCue26=Select_Input_RGB_9
+InputCue27=[~UNUSED~]
+InputCue28=Select_Input_Video_1
+InputCue29=Select_Input_Video_2
+InputCue30=Select_Input_Video_3
+InputCue31=Select_Input_Video_4
+InputCue32=Select_Input_Video_5
+InputCue33=Select_Input_Video_6
+InputCue34=Select_Input_Video_7
+InputCue35=Select_Input_Video_8
+InputCue36=Select_Input_Video_9
+InputCue37=[~UNUSED~]
+InputCue38=Select_Input_Digital_1
+InputCue39=Select_Input_Digital_2
+InputCue40=Select_Input_Digital_3
+InputCue41=Select_Input_Digital_4
+InputCue42=Select_Input_Digital_5
+InputCue43=Select_Input_Digital_6
+InputCue44=Select_Input_Digital_7
+InputCue45=Select_Input_Digital_8
+InputCue46=Select_Input_Digital_9
+InputCue47=[~UNUSED~]
+InputCue48=Select_Input_Storage_1
+InputCue49=Select_Input_Storage_2
+InputCue50=Select_Input_Storage_3
+InputCue51=Select_Input_Storage_4
+InputCue52=Select_Input_Storage_5
+InputCue53=Select_Input_Storage_6
+InputCue54=Select_Input_Storage_7
+InputCue55=Select_Input_Storage_8
+InputCue56=Select_Input_Storage_9
+InputCue57=[~UNUSED~]
+InputCue58=Select_Input_Network_1
+InputCue59=Select_Input_Network_2
+InputCue60=Select_Input_Network_3
+InputCue61=Select_Input_Network_4
+InputCue62=Select_Input_Network_5
+InputCue63=Select_Input_Network_6
+InputCue64=Select_Input_Network_7
+InputCue65=Select_Input_Network_8
+InputCue66=Select_Input_Network_9
+OutputCue1=Projector_Is_On
+OutputCue2=Projector_Is_Off
+OutputCue3=Projector_Is_Cooling
+OutputCue4=Projector_Is_Warming_Up
+OutputCue5=Video_Mute_Is_On
+OutputCue6=[~UNUSED~]
+OutputCue7=Audio_Mute_Is_On
+OutputCue8=[~UNUSED~]
+OutputCue9=Video_And_Audio_Mute_Is_On
+OutputCue10=Video_And_Audio_Mute_Is_Off
+OutputCue11=[~UNUSED~]
+OutputCue12=[~UNUSED~]
+OutputCue13=Lamp1_Is_On
+OutputCue14=Lamp2_Is_On
+OutputCue15=Lamp1_Hour_Status
+OutputCue16=Lamp2_Hour_Status
+OutputCue17=[~UNUSED~]
+OutputCue18=Input_RGB_1_Is_Selected
+OutputCue19=Input_RGB_2_Is_Selected
+OutputCue20=Input_RGB_3_Is_Selected
+OutputCue21=Input_RGB_4_Is_Selected
+OutputCue22=Input_RGB_5_Is_Selected
+OutputCue23=Input_RGB_6_Is_Selected
+OutputCue24=Input_RGB_7_Is_Selected
+OutputCue25=Input_RGB_8_Is_Selected
+OutputCue26=Input_RGB_9_Is_Selected
+OutputCue27=[~UNUSED~]
+OutputCue28=Input_Video_1_Is_Selected
+OutputCue29=Input_Video_2_Is_Selected
+OutputCue30=Input_Video_3_Is_Selected
+OutputCue31=Input_Video_4_Is_Selected
+OutputCue32=Input_Video_5_Is_Selected
+OutputCue33=Input_Video_6_Is_Selected
+OutputCue34=Input_Video_7_Is_Selected
+OutputCue35=Input_Video_8_Is_Selected
+OutputCue36=Input_Video_9_Is_Selected
+OutputCue37=[~UNUSED~]
+OutputCue38=Input_Digital_1_Is_Selected
+OutputCue39=Input_Digital_2_Is_Selected
+OutputCue40=Input_Digital_3_Is_Selected
+OutputCue41=Input_Digital_4_Is_Selected
+OutputCue42=Input_Digital_5_Is_Selected
+OutputCue43=Input_Digital_6_Is_Selected
+OutputCue44=Input_Digital_7_Is_Selected
+OutputCue45=Input_Digital_8_Is_Selected
+OutputCue46=Input_Digital_9_Is_Selected
+OutputCue47=[~UNUSED~]
+OutputCue48=Input_Storage_1_Is_Selected
+OutputCue49=Input_Storage_2_Is_Selected
+OutputCue50=Input_Storage_3_Is_Selected
+OutputCue51=Input_Storage_4_Is_Selected
+OutputCue52=Input_Storage_5_Is_Selected
+OutputCue53=Input_Storage_6_Is_Selected
+OutputCue54=Input_Storage_7_Is_Selected
+OutputCue55=Input_Storage_8_Is_Selected
+OutputCue56=Input_Storage_9_Is_Selected
+OutputCue57=[~UNUSED~]
+OutputCue58=Input_Network_1_Is_Selected
+OutputCue59=Input_Network_2_Is_Selected
+OutputCue60=Input_Network_3_Is_Selected
+OutputCue61=Input_Network_4_Is_Selected
+OutputCue62=Input_Network_5_Is_Selected
+OutputCue63=Input_Network_6_Is_Selected
+OutputCue64=Input_Network_7_Is_Selected
+OutputCue65=Input_Network_8_Is_Selected
+OutputCue66=Input_Network_9_Is_Selected
+OutputCue67=[~UNUSED~]
+OutputCue68=Fan_Warning_Is_Active
+OutputCue69=Fan_Error_Is_Active
+OutputCue70=Lamp_Warning_Is_Active
+OutputCue71=Lamp_Error_Is_Active
+OutputCue72=Temperature_Warning_Is_Active
+OutputCue73=Temperature_Error_Is_Active
+OutputCue74=CoverOpen_Warning_Is_Active
+OutputCue75=CoverOpen_Error_Is_Active
+OutputCue76=Filter_Warning_Is_Active
+OutputCue77=Filter_Error_Is_Active
+OutputCue78=Other_Warning_Is_Active
+OutputCue79=Other_Error_Is_Active
+OutputCue80=[~UNUSED~]
+OutputCue81=TCP_Connection_Connected
+OutputCue82=TCP_Connection_Status
+ParamCue1=PortNumber
+ParamCue2=Projector_IP_Address
+ParamCue3=PJLink_Password
+MPi=66
+Pi1=4
+Pi2=5
+Pi3=6
+Pi5=7
+Pi6=8
+Pi7=9
+Pi8=10
+Pi9=11
+Pi10=12
+Pi11=13
+Pi13=14
+Pi14=15
+Pi16=16
+Pi18=17
+Pi19=18
+Pi20=19
+Pi21=20
+Pi22=21
+Pi23=22
+Pi24=23
+Pi25=24
+Pi26=25
+Pi28=26
+Pi29=27
+Pi30=28
+Pi31=29
+Pi32=30
+Pi33=31
+Pi34=32
+Pi35=33
+Pi36=34
+Pi38=35
+Pi39=36
+Pi40=37
+Pi41=38
+Pi42=39
+Pi43=40
+Pi44=41
+Pi45=42
+Pi46=43
+Pi48=44
+Pi49=45
+Pi50=46
+Pi51=47
+Pi52=48
+Pi53=49
+Pi54=50
+Pi55=51
+Pi56=52
+Pi58=53
+Pi59=54
+Pi60=55
+Pi61=56
+Pi62=57
+Pi63=58
+Pi64=59
+Pi65=60
+Pi66=61
+MPo=82
+Po1=62
+Po2=63
+Po3=64
+Po4=65
+Po5=66
+Po7=67
+Po9=68
+Po10=69
+Po13=70
+Po14=71
+Po15=72
+Po16=73
+Po18=74
+Po19=75
+Po20=76
+Po21=77
+Po22=78
+Po23=79
+Po24=80
+Po25=81
+Po26=82
+Po28=83
+Po29=84
+Po30=85
+Po31=86
+Po32=87
+Po33=88
+Po34=89
+Po35=90
+Po36=91
+Po38=92
+Po39=93
+Po40=94
+Po41=95
+Po42=96
+Po43=97
+Po44=98
+Po45=99
+Po46=100
+Po48=101
+Po49=102
+Po50=103
+Po51=104
+Po52=105
+Po53=106
+Po54=107
+Po55=108
+Po56=109
+Po58=110
+Po59=111
+Po60=112
+Po61=113
+Po62=114
+Po63=115
+Po64=116
+Po65=117
+Po66=118
+Po68=119
+Po69=120
+Po70=121
+Po71=122
+Po72=123
+Po73=124
+Po74=125
+Po75=126
+Po76=127
+Po77=128
+Po78=129
+Po79=130
+Po81=131
+Po82=132
+MPp=3
+Pp1=1
+Pp2=2
+Pp3=3
+FileName=PJLINK v1.0.umc
+]
+[
+ObjTp=Sm
+H=1
+SmC=157
+Nm=Central Control Modules
+ObjVer=1
+CF=2
+n1I=1
+n1O=1
+mI=1
+mO=1
+tO=1
+mP=1
+P1=
+]
+[
+ObjTp=Sm
+H=2
+SmC=157
+Nm=Network Modules
+ObjVer=1
+CF=2
+n1I=1
+n1O=1
+mI=1
+mO=1
+tO=1
+mP=1
+P1=
+]
+[
+ObjTp=Sm
+H=3
+SmC=157
+Nm=Ethernet
+ObjVer=1
+CF=2
+n1I=1
+n1O=1
+mI=1
+mO=1
+tO=1
+mP=1
+P1=
+]
+[
+ObjTp=Sm
+H=4
+SmC=156
+Nm=Logic
+ObjVer=1
+CF=2
+mC=6
+C1=7
+C2=9
+C3=10
+C4=11
+C5=8
+C6=12
+]
+[
+ObjTp=Sm
+H=5
+SmC=157
+Nm=DefineArguments
+ObjVer=1
+CF=2
+n1I=1
+n1O=1
+mC=1
+C1=6
+mI=1
+mO=1
+tO=1
+mP=1
+P1=
+]
+[
+ObjTp=Sm
+H=6
+SmC=55
+ObjVer=1
+PrH=5
+CF=2
+n1I=66
+n1O=82
+mI=66
+I1=5
+I2=6
+I3=7
+I4=140
+I5=8
+I6=9
+I7=10
+I8=11
+I9=12
+I10=13
+I11=15
+I12=140
+I13=17
+I14=16
+I15=140
+I16=14
+I17=140
+I18=18
+I19=19
+I20=20
+I21=21
+I22=22
+I23=23
+I24=24
+I25=25
+I26=26
+I27=140
+I28=27
+I29=28
+I30=29
+I31=30
+I32=31
+I33=32
+I34=33
+I35=34
+I36=35
+I37=140
+I38=36
+I39=37
+I40=38
+I41=39
+I42=40
+I43=41
+I44=42
+I45=43
+I46=44
+I47=140
+I48=45
+I49=46
+I50=47
+I51=48
+I52=49
+I53=50
+I54=51
+I55=52
+I56=53
+I57=140
+I58=54
+I59=55
+I60=56
+I61=57
+I62=58
+I63=59
+I64=60
+I65=61
+I66=62
+mO=82
+tO=82
+O1=133
+O2=132
+O3=134
+O4=135
+O5=136
+O6=140
+O7=137
+O8=140
+O9=138
+O10=139
+O11=140
+O12=140
+O13=69
+O14=70
+O15=85
+O16=86
+O17=140
+O18=87
+O19=88
+O20=89
+O21=90
+O22=91
+O23=92
+O24=93
+O25=94
+O26=95
+O27=140
+O28=96
+O29=97
+O30=98
+O31=99
+O32=100
+O33=101
+O34=102
+O35=103
+O36=104
+O37=140
+O38=105
+O39=106
+O40=107
+O41=108
+O42=109
+O43=110
+O44=111
+O45=112
+O46=113
+O47=140
+O48=114
+O49=115
+O50=116
+O51=117
+O52=118
+O53=119
+O54=120
+O55=121
+O56=122
+O57=140
+O58=123
+O59=124
+O60=125
+O61=126
+O62=127
+O63=128
+O64=129
+O65=130
+O66=131
+O67=140
+O68=71
+O69=72
+O70=73
+O71=74
+O72=75
+O73=76
+O74=77
+O75=78
+O76=79
+O77=80
+O78=81
+O79=82
+O80=140
+O81=68
+O82=83
+mP=3
+P1=PortNumber
+P2=Projector_IP_Address
+P3=PJLink_Password
+MPi=66
+Pi1=4
+Pi2=5
+Pi3=6
+Pi5=7
+Pi6=8
+Pi7=9
+Pi8=10
+Pi9=11
+Pi10=12
+Pi11=13
+Pi13=14
+Pi14=15
+Pi16=16
+Pi18=17
+Pi19=18
+Pi20=19
+Pi21=20
+Pi22=21
+Pi23=22
+Pi24=23
+Pi25=24
+Pi26=25
+Pi28=26
+Pi29=27
+Pi30=28
+Pi31=29
+Pi32=30
+Pi33=31
+Pi34=32
+Pi35=33
+Pi36=34
+Pi38=35
+Pi39=36
+Pi40=37
+Pi41=38
+Pi42=39
+Pi43=40
+Pi44=41
+Pi45=42
+Pi46=43
+Pi48=44
+Pi49=45
+Pi50=46
+Pi51=47
+Pi52=48
+Pi53=49
+Pi54=50
+Pi55=51
+Pi56=52
+Pi58=53
+Pi59=54
+Pi60=55
+Pi61=56
+Pi62=57
+Pi63=58
+Pi64=59
+Pi65=60
+Pi66=61
+MPo=82
+Po1=62
+Po2=63
+Po3=64
+Po4=65
+Po5=66
+Po7=67
+Po9=68
+Po10=69
+Po13=70
+Po14=71
+Po15=72
+Po16=73
+Po18=74
+Po19=75
+Po20=76
+Po21=77
+Po22=78
+Po23=79
+Po24=80
+Po25=81
+Po26=82
+Po28=83
+Po29=84
+Po30=85
+Po31=86
+Po32=87
+Po33=88
+Po34=89
+Po35=90
+Po36=91
+Po38=92
+Po39=93
+Po40=94
+Po41=95
+Po42=96
+Po43=97
+Po44=98
+Po45=99
+Po46=100
+Po48=101
+Po49=102
+Po50=103
+Po51=104
+Po52=105
+Po53=106
+Po54=107
+Po55=108
+Po56=109
+Po58=110
+Po59=111
+Po60=112
+Po61=113
+Po62=114
+Po63=115
+Po64=116
+Po65=117
+Po66=118
+Po68=119
+Po69=120
+Po70=121
+Po71=122
+Po72=123
+Po73=124
+Po74=125
+Po75=126
+Po76=127
+Po77=128
+Po78=129
+Po79=130
+Po81=131
+Po82=132
+MPp=3
+Pp1=1
+Pp2=2
+Pp3=3
+]
+[
+ObjTp=Sm
+H=7
+SmC=101
+ObjVer=1
+PrH=4
+CF=2
+n1I=60
+n1O=9
+Cmn1=Commands & feedback\\
+mI=60
+I1=4
+I3=5
+I4=6
+I5=145
+I6=8
+I7=9
+I8=10
+I9=11
+I10=12
+I11=13
+I12=150
+I13=148
+I14=16
+I15=17
+I16=18
+I17=19
+I18=20
+I19=21
+I20=22
+I21=23
+I22=24
+I23=25
+I24=26
+I25=27
+I26=28
+I27=29
+I28=30
+I29=31
+I30=32
+I31=33
+I32=34
+I33=35
+I34=36
+I35=37
+I36=38
+I37=39
+I38=40
+I39=41
+I40=42
+I41=43
+I42=44
+I43=45
+I44=46
+I45=47
+I46=48
+I47=49
+I48=50
+I49=51
+I50=52
+I51=53
+I52=54
+I53=55
+I54=56
+I55=57
+I56=58
+I57=59
+I58=60
+I59=61
+I60=62
+mO=9
+tO=9
+O1=63
+O2=64
+O3=65
+O4=66
+O5=67
+O6=141
+O7=142
+O8=143
+O9=144
+mP=67
+P1=
+P2=POWR 1
+P3=POWR 0
+P4=POWR ?
+P5=AVMT 11
+P6=AVMT 10
+P7=AVMT 21
+P8=AVMT 20
+P9=AVMT 31
+P10=AVMT 30
+P11=INPT ?
+P12=AVMT ?
+P13=ERST ?
+P14=LAMP ?
+P15=INPT 11
+P16=INPT 12
+P17=INPT 13
+P18=INPT 14
+P19=INPT 15
+P20=INPT 16
+P21=INPT 17
+P22=INPT 18
+P23=INPT 19
+P24=INPT 21
+P25=INPT 22
+P26=INPT 23
+P27=INPT 24
+P28=INPT 25
+P29=INPT 26
+P30=INPT 27
+P31=INPT 28
+P32=INPT 29
+P33=INPT 31
+P34=INPT 32
+P35=INPT 33
+P36=INPT 34
+P37=INPT 35
+P38=INPT 36
+P39=INPT 37
+P40=INPT 38
+P41=INPT 39
+P42=INPT 41
+P43=INPT 42
+P44=INPT 43
+P45=INPT 44
+P46=INPT 45
+P47=INPT 46
+P48=INPT 47
+P49=INPT 48
+P50=INPT 49
+P51=INPT 51
+P52=INPT 52
+P53=INPT 53
+P54=INPT 54
+P55=INPT 55
+P56=INPT 56
+P57=INPT 57
+P58=INPT 58
+P59=INPT 59
+P60=%1POWR=0\r
+P61=%1POWR=1\r
+P62=%1POWR=2\r
+P63=%1POWR=3\r
+P64=%1AVMT=11\r
+P65=%1AVMT=21\r
+P66=%1AVMT=31\r
+P67=%1AVMT=30\r
+]
+[
+ObjTp=Sm
+H=8
+SmC=103
+Nm=PJLINK.usp
+ObjVer=1
+PrH=4
+CF=2
+n1I=3
+n2I=1
+n1O=17
+mI=4
+I4=63
+mO=26
+tO=26
+O1=68
+O3=69
+O4=70
+O6=71
+O7=72
+O8=73
+O9=74
+O10=75
+O11=76
+O12=77
+O13=78
+O14=79
+O15=80
+O16=81
+O17=82
+O19=83
+O21=84
+O23=85
+O24=86
+O26=4
+mP=4
+P1=
+P2=#PortNumber
+P3=#Projector_IP_Address
+P4=#PJLink_Password
+]
+[
+ObjTp=Sm
+H=9
+SmC=38
+ObjVer=1
+PrH=4
+CF=2
+n1I=2
+n1O=45
+Cmn1=Input Feedback\\
+mI=2
+I1=84
+mO=45
+tO=45
+O1=87
+O2=88
+O3=89
+O4=90
+O5=91
+O6=92
+O7=93
+O8=94
+O9=95
+O10=96
+O11=97
+O12=98
+O13=99
+O14=100
+O15=101
+O16=102
+O17=103
+O18=104
+O19=105
+O20=106
+O21=107
+O22=108
+O23=109
+O24=110
+O25=111
+O26=112
+O27=113
+O28=114
+O29=115
+O30=116
+O31=117
+O32=118
+O33=119
+O34=120
+O35=121
+O36=122
+O37=123
+O38=124
+O39=125
+O40=126
+O41=127
+O42=128
+O43=129
+O44=130
+O45=131
+mP=45
+P1=11d
+P2=12d
+P3=13d
+P4=14d
+P5=15d
+P6=16d
+P7=17d
+P8=18d
+P9=19d
+P10=21d
+P11=22d
+P12=23d
+P13=24d
+P14=25d
+P15=26d
+P16=27d
+P17=28d
+P18=29d
+P19=31d
+P20=32d
+P21=33d
+P22=34d
+P23=35d
+P24=36d
+P25=37d
+P26=38d
+P27=39d
+P28=41d
+P29=42d
+P30=43d
+P31=44d
+P32=45d
+P33=46d
+P34=47d
+P35=48d
+P36=49d
+P37=51d
+P38=52d
+P39=53d
+P40=54d
+P41=55d
+P42=56d
+P43=57d
+P44=58d
+P45=59d
+]
+[
+ObjTp=Sm
+H=10
+SmC=19
+ObjVer=1
+PrH=4
+CF=2
+n1I=6
+n1O=4
+Cmn1=Power\\
+mI=6
+I3=64
+I4=65
+I5=66
+I6=67
+mO=4
+tO=4
+O1=132
+O2=133
+O3=134
+O4=135
+]
+[
+ObjTp=Sm
+H=11
+SmC=19
+ObjVer=1
+PrH=4
+CF=2
+n1I=6
+n1O=4
+Cmn1=Video Mute\\
+mI=6
+I3=141
+I4=142
+I5=143
+I6=144
+mO=4
+tO=4
+O1=136
+O2=137
+O3=138
+O4=139
+]
+[
+ObjTp=Sm
+H=12
+SmC=156
+ObjVer=1
+PrH=4
+CF=2
+Cmn1=feedback request\\
+mC=3
+C1=14
+C2=16
+C3=19
+]
+[
+ObjTp=Sm
+H=13
+SmC=3
+ObjVer=1
+PrH=14
+CF=2
+n1I=2
+n1O=1
+Cmn1=power\\
+mI=2
+I1=5
+I2=6
+mO=1
+tO=1
+O1=146
+]
+[
+ObjTp=Sm
+H=14
+SmC=156
+ObjVer=1
+PrH=12
+CF=2
+Cmn1=power\\
+mC=2
+C1=13
+C2=15
+]
+[
+ObjTp=Sm
+H=15
+SmC=3
+ObjVer=1
+PrH=14
+CF=2
+n1I=2
+n1O=1
+Cmn1=or request power\\
+mI=2
+I1=146
+I2=7
+mO=1
+tO=1
+O1=145
+]
+[
+ObjTp=Sm
+H=16
+SmC=156
+ObjVer=1
+PrH=12
+CF=2
+Cmn1=video mute\\
+mC=2
+C1=17
+C2=18
+]
+[
+ObjTp=Sm
+H=17
+SmC=3
+ObjVer=1
+PrH=16
+CF=2
+n1I=6
+n1O=1
+Cmn1=mute\\
+mI=6
+I1=8
+I2=9
+I3=10
+I4=11
+I5=12
+I6=13
+mO=1
+tO=1
+O1=147
+]
+[
+ObjTp=Sm
+H=18
+SmC=3
+ObjVer=1
+PrH=16
+CF=2
+n1I=2
+n1O=1
+Cmn1=request mute status\\
+mI=2
+I1=147
+I2=15
+mO=1
+tO=1
+O1=148
+]
+[
+ObjTp=Sm
+H=19
+SmC=156
+ObjVer=1
+PrH=12
+CF=2
+Cmn1=Input selection\\
+mC=2
+C1=20
+C2=21
+]
+[
+ObjTp=Sm
+H=20
+SmC=3
+ObjVer=1
+PrH=19
+CF=2
+n1I=45
+n1O=1
+Cmn1=Input selections\\
+mI=45
+I1=18
+I2=19
+I3=20
+I4=21
+I5=22
+I6=23
+I7=24
+I8=25
+I9=26
+I10=27
+I11=28
+I12=29
+I13=30
+I14=31
+I15=32
+I16=33
+I17=34
+I18=35
+I19=36
+I20=37
+I21=38
+I22=39
+I23=40
+I24=41
+I25=42
+I26=43
+I27=44
+I28=45
+I29=46
+I30=47
+I31=48
+I32=49
+I33=50
+I34=51
+I35=52
+I36=53
+I37=54
+I38=55
+I39=56
+I40=57
+I41=58
+I42=59
+I43=60
+I44=61
+I45=62
+mO=1
+tO=1
+O1=149
+]
+[
+ObjTp=Sm
+H=21
+SmC=3
+ObjVer=1
+PrH=19
+CF=2
+n1I=2
+n1O=1
+Cmn1=or request input status\\
+mI=2
+I1=149
+I2=14
+mO=1
+tO=1
+O1=150
+]
+[
+ObjTp=Sg
+H=4
+Nm=Command_From_SimplPlus
+SgTp=4
+]
+[
+ObjTp=Sg
+H=5
+Nm=Power_On
+]
+[
+ObjTp=Sg
+H=6
+Nm=Power_Off
+]
+[
+ObjTp=Sg
+H=7
+Nm=Request_Power_Status
+]
+[
+ObjTp=Sg
+H=8
+Nm=Video_Mute_On
+]
+[
+ObjTp=Sg
+H=9
+Nm=Video_Mute_Off
+]
+[
+ObjTp=Sg
+H=10
+Nm=Audio_Mute_On
+]
+[
+ObjTp=Sg
+H=11
+Nm=Audio_Mute_Off
+]
+[
+ObjTp=Sg
+H=12
+Nm=Video_And_Audio_Mute_On
+]
+[
+ObjTp=Sg
+H=13
+Nm=Video_And_Audio_Mute_Off
+]
+[
+ObjTp=Sg
+H=14
+Nm=Request_Input_Status
+]
+[
+ObjTp=Sg
+H=15
+Nm=Request_Mute_Status
+]
+[
+ObjTp=Sg
+H=16
+Nm=Request_Error_Status
+]
+[
+ObjTp=Sg
+H=17
+Nm=Request_Lamps_Status
+]
+[
+ObjTp=Sg
+H=18
+Nm=Select_Input_RGB_1
+]
+[
+ObjTp=Sg
+H=19
+Nm=Select_Input_RGB_2
+]
+[
+ObjTp=Sg
+H=20
+Nm=Select_Input_RGB_3
+]
+[
+ObjTp=Sg
+H=21
+Nm=Select_Input_RGB_4
+]
+[
+ObjTp=Sg
+H=22
+Nm=Select_Input_RGB_5
+]
+[
+ObjTp=Sg
+H=23
+Nm=Select_Input_RGB_6
+]
+[
+ObjTp=Sg
+H=24
+Nm=Select_Input_RGB_7
+]
+[
+ObjTp=Sg
+H=25
+Nm=Select_Input_RGB_8
+]
+[
+ObjTp=Sg
+H=26
+Nm=Select_Input_RGB_9
+]
+[
+ObjTp=Sg
+H=27
+Nm=Select_Input_Video_1
+]
+[
+ObjTp=Sg
+H=28
+Nm=Select_Input_Video_2
+]
+[
+ObjTp=Sg
+H=29
+Nm=Select_Input_Video_3
+]
+[
+ObjTp=Sg
+H=30
+Nm=Select_Input_Video_4
+]
+[
+ObjTp=Sg
+H=31
+Nm=Select_Input_Video_5
+]
+[
+ObjTp=Sg
+H=32
+Nm=Select_Input_Video_6
+]
+[
+ObjTp=Sg
+H=33
+Nm=Select_Input_Video_7
+]
+[
+ObjTp=Sg
+H=34
+Nm=Select_Input_Video_8
+]
+[
+ObjTp=Sg
+H=35
+Nm=Select_Input_Video_9
+]
+[
+ObjTp=Sg
+H=36
+Nm=Select_Input_Digital_1
+]
+[
+ObjTp=Sg
+H=37
+Nm=Select_Input_Digital_2
+]
+[
+ObjTp=Sg
+H=38
+Nm=Select_Input_Digital_3
+]
+[
+ObjTp=Sg
+H=39
+Nm=Select_Input_Digital_4
+]
+[
+ObjTp=Sg
+H=40
+Nm=Select_Input_Digital_5
+]
+[
+ObjTp=Sg
+H=41
+Nm=Select_Input_Digital_6
+]
+[
+ObjTp=Sg
+H=42
+Nm=Select_Input_Digital_7
+]
+[
+ObjTp=Sg
+H=43
+Nm=Select_Input_Digital_8
+]
+[
+ObjTp=Sg
+H=44
+Nm=Select_Input_Digital_9
+]
+[
+ObjTp=Sg
+H=45
+Nm=Select_Input_Storage_1
+]
+[
+ObjTp=Sg
+H=46
+Nm=Select_Input_Storage_2
+]
+[
+ObjTp=Sg
+H=47
+Nm=Select_Input_Storage_3
+]
+[
+ObjTp=Sg
+H=48
+Nm=Select_Input_Storage_4
+]
+[
+ObjTp=Sg
+H=49
+Nm=Select_Input_Storage_5
+]
+[
+ObjTp=Sg
+H=50
+Nm=Select_Input_Storage_6
+]
+[
+ObjTp=Sg
+H=51
+Nm=Select_Input_Storage_7
+]
+[
+ObjTp=Sg
+H=52
+Nm=Select_Input_Storage_8
+]
+[
+ObjTp=Sg
+H=53
+Nm=Select_Input_Storage_9
+]
+[
+ObjTp=Sg
+H=54
+Nm=Select_Input_Network_1
+]
+[
+ObjTp=Sg
+H=55
+Nm=Select_Input_Network_2
+]
+[
+ObjTp=Sg
+H=56
+Nm=Select_Input_Network_3
+]
+[
+ObjTp=Sg
+H=57
+Nm=Select_Input_Network_4
+]
+[
+ObjTp=Sg
+H=58
+Nm=Select_Input_Network_5
+]
+[
+ObjTp=Sg
+H=59
+Nm=Select_Input_Network_6
+]
+[
+ObjTp=Sg
+H=60
+Nm=Select_Input_Network_7
+]
+[
+ObjTp=Sg
+H=61
+Nm=Select_Input_Network_8
+]
+[
+ObjTp=Sg
+H=62
+Nm=Select_Input_Network_9
+]
+[
+ObjTp=Sg
+H=63
+Nm=Command
+SgTp=4
+]
+[
+ObjTp=Sg
+H=64
+Nm=Projector_Off
+]
+[
+ObjTp=Sg
+H=65
+Nm=Projector_On
+]
+[
+ObjTp=Sg
+H=66
+Nm=Projector_Cooling
+]
+[
+ObjTp=Sg
+H=67
+Nm=Projector_Warming_Up
+]
+[
+ObjTp=Sg
+H=68
+Nm=TCP_Connection_Connected
+SgTf=Yes
+]
+[
+ObjTp=Sg
+H=69
+Nm=Lamp1_Is_On
+]
+[
+ObjTp=Sg
+H=70
+Nm=Lamp2_Is_On
+]
+[
+ObjTp=Sg
+H=71
+Nm=Fan_Warning_Is_Active
+]
+[
+ObjTp=Sg
+H=72
+Nm=Fan_Error_Is_Active
+]
+[
+ObjTp=Sg
+H=73
+Nm=Lamp_Warning_Is_Active
+]
+[
+ObjTp=Sg
+H=74
+Nm=Lamp_Error_Is_Active
+]
+[
+ObjTp=Sg
+H=75
+Nm=Temperature_Warning_Is_Active
+]
+[
+ObjTp=Sg
+H=76
+Nm=Temperature_Error_Is_Active
+]
+[
+ObjTp=Sg
+H=77
+Nm=CoverOpen_Warning_Is_Active
+]
+[
+ObjTp=Sg
+H=78
+Nm=CoverOpen_Error_Is_Active
+]
+[
+ObjTp=Sg
+H=79
+Nm=Filter_Warning_Is_Active
+]
+[
+ObjTp=Sg
+H=80
+Nm=Filter_Error_Is_Active
+]
+[
+ObjTp=Sg
+H=81
+Nm=Other_Warning_Is_Active
+]
+[
+ObjTp=Sg
+H=82
+Nm=Other_Error_Is_Active
+]
+[
+ObjTp=Sg
+H=83
+Nm=TCP_Connection_Status
+SgTp=2
+]
+[
+ObjTp=Sg
+H=84
+Nm=Input_Feedback
+SgTp=2
+]
+[
+ObjTp=Sg
+H=85
+Nm=Lamp1_Hour_Status
+SgTp=2
+]
+[
+ObjTp=Sg
+H=86
+Nm=Lamp2_Hour_Status
+SgTp=2
+]
+[
+ObjTp=Sg
+H=87
+Nm=Input_RGB_1_Is_Selected
+]
+[
+ObjTp=Sg
+H=88
+Nm=Input_RGB_2_Is_Selected
+]
+[
+ObjTp=Sg
+H=89
+Nm=Input_RGB_3_Is_Selected
+]
+[
+ObjTp=Sg
+H=90
+Nm=Input_RGB_4_Is_Selected
+]
+[
+ObjTp=Sg
+H=91
+Nm=Input_RGB_5_Is_Selected
+]
+[
+ObjTp=Sg
+H=92
+Nm=Input_RGB_6_Is_Selected
+]
+[
+ObjTp=Sg
+H=93
+Nm=Input_RGB_7_Is_Selected
+]
+[
+ObjTp=Sg
+H=94
+Nm=Input_RGB_8_Is_Selected
+]
+[
+ObjTp=Sg
+H=95
+Nm=Input_RGB_9_Is_Selected
+]
+[
+ObjTp=Sg
+H=96
+Nm=Input_Video_1_Is_Selected
+]
+[
+ObjTp=Sg
+H=97
+Nm=Input_Video_2_Is_Selected
+]
+[
+ObjTp=Sg
+H=98
+Nm=Input_Video_3_Is_Selected
+]
+[
+ObjTp=Sg
+H=99
+Nm=Input_Video_4_Is_Selected
+]
+[
+ObjTp=Sg
+H=100
+Nm=Input_Video_5_Is_Selected
+]
+[
+ObjTp=Sg
+H=101
+Nm=Input_Video_6_Is_Selected
+]
+[
+ObjTp=Sg
+H=102
+Nm=Input_Video_7_Is_Selected
+]
+[
+ObjTp=Sg
+H=103
+Nm=Input_Video_8_Is_Selected
+]
+[
+ObjTp=Sg
+H=104
+Nm=Input_Video_9_Is_Selected
+]
+[
+ObjTp=Sg
+H=105
+Nm=Input_Digital_1_Is_Selected
+]
+[
+ObjTp=Sg
+H=106
+Nm=Input_Digital_2_Is_Selected
+]
+[
+ObjTp=Sg
+H=107
+Nm=Input_Digital_3_Is_Selected
+]
+[
+ObjTp=Sg
+H=108
+Nm=Input_Digital_4_Is_Selected
+]
+[
+ObjTp=Sg
+H=109
+Nm=Input_Digital_5_Is_Selected
+]
+[
+ObjTp=Sg
+H=110
+Nm=Input_Digital_6_Is_Selected
+]
+[
+ObjTp=Sg
+H=111
+Nm=Input_Digital_7_Is_Selected
+]
+[
+ObjTp=Sg
+H=112
+Nm=Input_Digital_8_Is_Selected
+]
+[
+ObjTp=Sg
+H=113
+Nm=Input_Digital_9_Is_Selected
+]
+[
+ObjTp=Sg
+H=114
+Nm=Input_Storage_1_Is_Selected
+]
+[
+ObjTp=Sg
+H=115
+Nm=Input_Storage_2_Is_Selected
+]
+[
+ObjTp=Sg
+H=116
+Nm=Input_Storage_3_Is_Selected
+]
+[
+ObjTp=Sg
+H=117
+Nm=Input_Storage_4_Is_Selected
+]
+[
+ObjTp=Sg
+H=118
+Nm=Input_Storage_5_Is_Selected
+]
+[
+ObjTp=Sg
+H=119
+Nm=Input_Storage_6_Is_Selected
+]
+[
+ObjTp=Sg
+H=120
+Nm=Input_Storage_7_Is_Selected
+]
+[
+ObjTp=Sg
+H=121
+Nm=Input_Storage_8_Is_Selected
+]
+[
+ObjTp=Sg
+H=122
+Nm=Input_Storage_9_Is_Selected
+]
+[
+ObjTp=Sg
+H=123
+Nm=Input_Network_1_Is_Selected
+]
+[
+ObjTp=Sg
+H=124
+Nm=Input_Network_2_Is_Selected
+]
+[
+ObjTp=Sg
+H=125
+Nm=Input_Network_3_Is_Selected
+]
+[
+ObjTp=Sg
+H=126
+Nm=Input_Network_4_Is_Selected
+]
+[
+ObjTp=Sg
+H=127
+Nm=Input_Network_5_Is_Selected
+]
+[
+ObjTp=Sg
+H=128
+Nm=Input_Network_6_Is_Selected
+]
+[
+ObjTp=Sg
+H=129
+Nm=Input_Network_7_Is_Selected
+]
+[
+ObjTp=Sg
+H=130
+Nm=Input_Network_8_Is_Selected
+]
+[
+ObjTp=Sg
+H=131
+Nm=Input_Network_9_Is_Selected
+]
+[
+ObjTp=Sg
+H=132
+Nm=Projector_Is_Off
+]
+[
+ObjTp=Sg
+H=133
+Nm=Projector_Is_On
+]
+[
+ObjTp=Sg
+H=134
+Nm=Projector_Is_Cooling
+]
+[
+ObjTp=Sg
+H=135
+Nm=Projector_Is_Warming_Up
+]
+[
+ObjTp=Sg
+H=136
+Nm=Video_Mute_Is_On
+]
+[
+ObjTp=Sg
+H=137
+Nm=Audio_Mute_Is_On
+]
+[
+ObjTp=Sg
+H=138
+Nm=Video_And_Audio_Mute_Is_On
+]
+[
+ObjTp=Sg
+H=139
+Nm=Video_And_Audio_Mute_Is_Off
+]
+[
+ObjTp=Sg
+H=140
+Nm=[~UNUSED~]
+SgTp=31
+]
+[
+ObjTp=Sg
+H=141
+Nm=Video_Mute_On_fb
+]
+[
+ObjTp=Sg
+H=142
+Nm=Audio_Mute_On_fb
+]
+[
+ObjTp=Sg
+H=143
+Nm=Video_And_Audio_Mute_On_fb
+]
+[
+ObjTp=Sg
+H=144
+Nm=Video_And_Audio_Mute_Off_fb
+]
+[
+ObjTp=Sg
+H=145
+Nm=Request_Power_Status_or
+]
+[
+ObjTp=Sg
+H=146
+Nm=Request_Power_or
+]
+[
+ObjTp=Sg
+H=147
+Nm=request_mute_or
+]
+[
+ObjTp=Sg
+H=148
+Nm=Request_Mute_Status_or
+]
+[
+ObjTp=Sg
+H=149
+Nm=Request_Input_or
+]
+[
+ObjTp=Sg
+H=150
+Nm=Request_Input_status_or
+]
+[
+ObjTp=Dp
+H=1
+Tp=1
+FD1=Analog value containing the port number for the TCP/IP Connection.
+SD=Port Number
+HD=TRUE
+DV=4352d
+NF=1
+DNF=1
+Sgn=0
+]
+[
+ObjTp=Dp
+H=2
+Tp=1
+FD1=Serial value containing the Projector IP Address.
+SD=Projector IP Address
+NoS=FALSE
+Sgn=0
+]
+[
+ObjTp=Dp
+H=3
+Tp=1
+FD1=Serial value containing the PJLink Password when using PJLink with||1
+FD2=authentication.
+SD=PJLink Password
+HD=TRUE
+DV=JBMIAProjectorLink
+NoS=FALSE
+Sgn=0
+]
+[
+ObjTp=Dp
+H=4
+Tp=2
+DT=1
+FD1=Pulse to Power the unit On.
+SD=Power On
+Trg=1
+]
+[
+ObjTp=Dp
+H=5
+Tp=2
+DT=1
+FD1=Pulse to Power the unit Off.
+SD=Power Off
+Trg=1
+]
+[
+ObjTp=Dp
+H=6
+Tp=2
+DT=1
+FD1=Pulse to request the Power Status of the unit.
+SD=Request Power Status
+Trg=1
+]
+[
+ObjTp=Dp
+H=7
+Tp=2
+DT=1
+FD1=Pulse to Video Mute.
+SD=Video Mute On
+Trg=1
+]
+[
+ObjTp=Dp
+H=8
+Tp=2
+DT=1
+FD1=Pulse to turn Video Mute off.
+SD=Video Mute Off
+Trg=1
+]
+[
+ObjTp=Dp
+H=9
+Tp=2
+DT=1
+FD1=Pulse to Audio Mute.
+SD=Audio Mute On
+Trg=1
+]
+[
+ObjTp=Dp
+H=10
+Tp=2
+DT=1
+FD1=Pulse to turn Audio Mute off.
+SD=Audio Mute Off
+Trg=1
+]
+[
+ObjTp=Dp
+H=11
+Tp=2
+DT=1
+FD1=Pulse to mute Video and Audio.
+SD=Video And Audio Mute On
+Trg=1
+]
+[
+ObjTp=Dp
+H=12
+Tp=2
+DT=1
+FD1=Pulse to un-mute Video and Audio.
+SD=Video And Audio Mute Off
+Trg=1
+]
+[
+ObjTp=Dp
+H=13
+Tp=2
+DT=1
+FD1=Pulse to request Video and Audio Mute Status.
+SD=Request Mute Status
+Trg=1
+]
+[
+ObjTp=Dp
+H=14
+Tp=2
+DT=1
+FD1=Pulse to request the statuses of the lamps.
+SD=Request Lamps Status
+Trg=1
+]
+[
+ObjTp=Dp
+H=15
+Tp=2
+DT=1
+FD1=Pulse to request the Error statuses.
+SD=Request Error Status
+Trg=1
+]
+[
+ObjTp=Dp
+H=16
+Tp=2
+DT=1
+FD1=Pulse to request the selected Input.
+SD=Request Input Status
+Trg=1
+]
+[
+ObjTp=Dp
+H=17
+Tp=2
+DT=1
+FD1=Pulse to select Input RGB 1.
+SD=Select Input RGB 1
+Trg=1
+]
+[
+ObjTp=Dp
+H=18
+Tp=2
+DT=1
+FD1=Pulse to select Input RGB 2.
+SD=Select Input RGB 2
+Trg=1
+]
+[
+ObjTp=Dp
+H=19
+Tp=2
+DT=1
+FD1=Pulse to select Input RGB 3.
+SD=Select Input RGB 3
+Trg=1
+]
+[
+ObjTp=Dp
+H=20
+Tp=2
+DT=1
+FD1=Pulse to select Input RGB 4.
+SD=Select Input RGB 4
+Trg=1
+]
+[
+ObjTp=Dp
+H=21
+Tp=2
+DT=1
+FD1=Pulse to select Input RGB 5.
+SD=Select Input RGB 5
+Trg=1
+]
+[
+ObjTp=Dp
+H=22
+Tp=2
+DT=1
+FD1=Pulse to select Input RGB 6.
+SD=Select Input RGB 6
+Trg=1
+]
+[
+ObjTp=Dp
+H=23
+Tp=2
+DT=1
+FD1=Pulse to select Input RGB 7.
+SD=Select Input RGB 7
+Trg=1
+]
+[
+ObjTp=Dp
+H=24
+Tp=2
+DT=1
+FD1=Pulse to select Input RGB 8.
+SD=Select Input RGB 8
+Trg=1
+]
+[
+ObjTp=Dp
+H=25
+Tp=2
+DT=1
+FD1=Pulse to select Input RGB 9.
+SD=Select Input RGB 9
+Trg=1
+]
+[
+ObjTp=Dp
+H=26
+Tp=2
+DT=1
+FD1=Pulse to select Input Video 1.
+SD=Select Input Video 1
+Trg=1
+]
+[
+ObjTp=Dp
+H=27
+Tp=2
+DT=1
+FD1=Pulse to select Input Video 2.
+SD=Select Input Video 2
+Trg=1
+]
+[
+ObjTp=Dp
+H=28
+Tp=2
+DT=1
+FD1=Pulse to select Input Video 3.
+SD=Select Input Video 3
+Trg=1
+]
+[
+ObjTp=Dp
+H=29
+Tp=2
+DT=1
+FD1=Pulse to select Input Video 4.
+SD=Select Input Video 4
+Trg=1
+]
+[
+ObjTp=Dp
+H=30
+Tp=2
+DT=1
+FD1=Pulse to select Input Video 5.
+SD=Select Input Video 5
+Trg=1
+]
+[
+ObjTp=Dp
+H=31
+Tp=2
+DT=1
+FD1=Pulse to select Input Video 6.
+SD=Select Input Video 6
+Trg=1
+]
+[
+ObjTp=Dp
+H=32
+Tp=2
+DT=1
+FD1=Pulse to select Input Video 7.
+SD=Select Input Video 7
+Trg=1
+]
+[
+ObjTp=Dp
+H=33
+Tp=2
+DT=1
+FD1=Pulse to select Input Video 8.
+SD=Select Input Video 8
+Trg=1
+]
+[
+ObjTp=Dp
+H=34
+Tp=2
+DT=1
+FD1=Pulse to select Input Video 9.
+SD=Select Input Video 9
+Trg=1
+]
+[
+ObjTp=Dp
+H=35
+Tp=2
+DT=1
+FD1=Pulse to select Input Digital 1.
+SD=Select Input Digital 1
+Trg=1
+]
+[
+ObjTp=Dp
+H=36
+Tp=2
+DT=1
+FD1=Pulse to select Input Digital 2.
+SD=Select Input Digital 2
+Trg=1
+]
+[
+ObjTp=Dp
+H=37
+Tp=2
+DT=1
+FD1=Pulse to select Input Digital 3.
+SD=Select Input Digital 3
+Trg=1
+]
+[
+ObjTp=Dp
+H=38
+Tp=2
+DT=1
+FD1=Pulse to select Input Digital 4.
+SD=Select Input Digital 4
+Trg=1
+]
+[
+ObjTp=Dp
+H=39
+Tp=2
+DT=1
+FD1=Pulse to select Input Digital 5.
+SD=Select Input Digital 5
+Trg=1
+]
+[
+ObjTp=Dp
+H=40
+Tp=2
+DT=1
+FD1=Pulse to select Input Digital 6.
+SD=Select Input Digital 6
+Trg=1
+]
+[
+ObjTp=Dp
+H=41
+Tp=2
+DT=1
+FD1=Pulse to select Input Digital 7.
+SD=Select Input Digital 7
+Trg=1
+]
+[
+ObjTp=Dp
+H=42
+Tp=2
+DT=1
+FD1=Pulse to select Input Digital 8.
+SD=Select Input Digital 8
+Trg=1
+]
+[
+ObjTp=Dp
+H=43
+Tp=2
+DT=1
+FD1=Pulse to select Input Digital 9.
+SD=Select Input Digital 9
+Trg=1
+]
+[
+ObjTp=Dp
+H=44
+Tp=2
+DT=1
+FD1=Pulse to select Input Storage 1.
+SD=Select Input Storage 1
+Trg=1
+]
+[
+ObjTp=Dp
+H=45
+Tp=2
+DT=1
+FD1=Pulse to select Input Storage 2.
+SD=Select Input Storage 2
+Trg=1
+]
+[
+ObjTp=Dp
+H=46
+Tp=2
+DT=1
+FD1=Pulse to select Input Storage 3.
+SD=Select Input Storage 3
+Trg=1
+]
+[
+ObjTp=Dp
+H=47
+Tp=2
+DT=1
+FD1=Pulse to select Input Storage 4.
+SD=Select Input Storage 4
+Trg=1
+]
+[
+ObjTp=Dp
+H=48
+Tp=2
+DT=1
+FD1=Pulse to select Input Storage 5.
+SD=Select Input Storage 5
+Trg=1
+]
+[
+ObjTp=Dp
+H=49
+Tp=2
+DT=1
+FD1=Pulse to select Input Storage 6.
+SD=Select Input Storage 6
+Trg=1
+]
+[
+ObjTp=Dp
+H=50
+Tp=2
+DT=1
+FD1=Pulse to select Input Storage 7.
+SD=Select Input Storage 7
+Trg=1
+]
+[
+ObjTp=Dp
+H=51
+Tp=2
+DT=1
+FD1=Pulse to select Input Storage 8.
+SD=Select Input Storage 8
+Trg=1
+]
+[
+ObjTp=Dp
+H=52
+Tp=2
+DT=1
+FD1=Pulse to select Input Storage 9.
+SD=Select Input Storage 9
+Trg=1
+]
+[
+ObjTp=Dp
+H=53
+Tp=2
+DT=1
+FD1=Pulse to select Input Network 1.
+SD=Select Input Network 1
+Trg=1
+]
+[
+ObjTp=Dp
+H=54
+Tp=2
+DT=1
+FD1=Pulse to select Input Network 2.
+SD=Select Input Network 2
+Trg=1
+]
+[
+ObjTp=Dp
+H=55
+Tp=2
+DT=1
+FD1=Pulse to select Input Network 3.
+SD=Select Input Network 3
+Trg=1
+]
+[
+ObjTp=Dp
+H=56
+Tp=2
+DT=1
+FD1=Pulse to select Input Network 4.
+SD=Select Input Network 4
+Trg=1
+]
+[
+ObjTp=Dp
+H=57
+Tp=2
+DT=1
+FD1=Pulse to select Input Network 5.
+SD=Select Input Network 5
+Trg=1
+]
+[
+ObjTp=Dp
+H=58
+Tp=2
+DT=1
+FD1=Pulse to select Input Network 6.
+SD=Select Input Network 6
+Trg=1
+]
+[
+ObjTp=Dp
+H=59
+Tp=2
+DT=1
+FD1=Pulse to select Input Network 7.
+SD=Select Input Network 7
+Trg=1
+]
+[
+ObjTp=Dp
+H=60
+Tp=2
+DT=1
+FD1=Pulse to select Input Network 8.
+SD=Select Input Network 8
+Trg=1
+]
+[
+ObjTp=Dp
+H=61
+Tp=2
+DT=1
+FD1=Pulse to select Input Network 9.
+SD=Select Input Network 9
+Trg=1
+]
+[
+ObjTp=Dp
+H=62
+Tp=3
+DT=1
+FD1=High to indicate that the projector is on.
+SD=Projector is On
+RE=Projector On
+HS=Projector is On
+]
+[
+ObjTp=Dp
+H=63
+Tp=3
+DT=1
+FD1=High to indicate that the projector is off.
+SD=Projector is Off
+RE=Projector Off
+HS=Projector is Off
+]
+[
+ObjTp=Dp
+H=64
+Tp=3
+DT=1
+FD1=High to indicate that the projector is Cooling.
+SD=Projector is Cooling
+RE=Projector Cooling
+HS=Projector is Cooling
+]
+[
+ObjTp=Dp
+H=65
+Tp=3
+DT=1
+FD1=High to indicate that the projector is Warming Up.
+SD=Projector is Warming Up
+RE=Projector Warming Up
+HS=Projector is Warming Up
+]
+[
+ObjTp=Dp
+H=66
+Tp=3
+DT=1
+FD1=High to indicate that the Video Mute is On.
+SD=Video Mute is On
+RE=Video Mute On
+HS=Video Mute is On
+]
+[
+ObjTp=Dp
+H=67
+Tp=3
+DT=1
+FD1=High to indicate that the Audio Mute is On.
+SD=Audio Mute is On
+RE=Audio Mute On
+HS=Audio Mute is On
+]
+[
+ObjTp=Dp
+H=68
+Tp=3
+DT=1
+FD1=High to indicate that the Video And Audio Mute is On.
+SD=Video And Audio Mute is On
+RE=Video And Audio Mute On
+HS=Video And Audio Mute is On
+]
+[
+ObjTp=Dp
+H=69
+Tp=3
+DT=1
+FD1=High to indicate that the Video And Audio Mute is Off.
+SD=Video And Audio Mute is Off
+RE=Video And Audio Mute Off
+HS=Video And Audio Mute is Off
+]
+[
+ObjTp=Dp
+H=70
+Tp=3
+DT=1
+FD1=High to indicate that lamp 1 is on.
+SD=Lamp1 is On
+RE=Lamp1 On
+HS=Lamp1 is On
+]
+[
+ObjTp=Dp
+H=71
+Tp=3
+DT=1
+FD1=High to indicate that lamp 2 is on.
+SD=Lamp2 is On
+RE=Lamp2 On
+HS=Lamp2 is On
+]
+[
+ObjTp=Dp
+H=72
+Tp=5
+FD1=Analog value containing the lamp hours of lamp 1.
+SD=Lamp1 Hour Status
+DNF=1
+]
+[
+ObjTp=Dp
+H=73
+Tp=5
+FD1=Analog value containing the lamp hours of lamp 2.
+SD=Lamp2 Hour Status
+DNF=1
+]
+[
+ObjTp=Dp
+H=74
+Tp=3
+DT=1
+FD1=High to indicate that Input RGB 1 is Selected.
+SD=Input RGB 1 is Selected
+RE=Input RGB 1 Selected
+HS=Input RGB 1 is Selected
+]
+[
+ObjTp=Dp
+H=75
+Tp=3
+DT=1
+FD1=High to indicate that Input RGB 2 is Selected.
+SD=Input RGB 2 is Selected
+RE=Input RGB 2 Selected
+HS=Input RGB 2 is Selected
+]
+[
+ObjTp=Dp
+H=76
+Tp=3
+DT=1
+FD1=High to indicate that Input RGB 3 is Selected.
+SD=Input RGB 3 is Selected
+RE=Input RGB 3 Selected
+HS=Input RGB 3 is Selected
+]
+[
+ObjTp=Dp
+H=77
+Tp=3
+DT=1
+FD1=High to indicate that Input RGB 4 is Selected.
+SD=Input RGB 4 is Selected
+RE=Input RGB 4 Selected
+HS=Input RGB 4 is Selected
+]
+[
+ObjTp=Dp
+H=78
+Tp=3
+DT=1
+FD1=High to indicate that Input RGB 5 is Selected.
+SD=Input RGB 5 is Selected
+RE=Input RGB 5 Selected
+HS=Input RGB 5 is Selected
+]
+[
+ObjTp=Dp
+H=79
+Tp=3
+DT=1
+FD1=High to indicate that Input RGB 6 is Selected.
+SD=Input RGB 6 is Selected
+RE=Input RGB 6 Selected
+HS=Input RGB 6 is Selected
+]
+[
+ObjTp=Dp
+H=80
+Tp=3
+DT=1
+FD1=High to indicate that Input RGB 7 is Selected.
+SD=Input RGB 7 is Selected
+RE=Input RGB 7 Selected
+HS=Input RGB 7 is Selected
+]
+[
+ObjTp=Dp
+H=81
+Tp=3
+DT=1
+FD1=High to indicate that Input RGB 8 is Selected.
+SD=Input RGB 8 is Selected
+RE=Input RGB 8 Selected
+HS=Input RGB 8 is Selected
+]
+[
+ObjTp=Dp
+H=82
+Tp=3
+DT=1
+FD1=High to indicate that Input RGB 9 is Selected.
+SD=Input RGB 9 is Selected
+RE=Input RGB 9 Selected
+HS=Input RGB 9 is Selected
+]
+[
+ObjTp=Dp
+H=83
+Tp=3
+DT=1
+FD1=High to indicate that Input Video 1 is Selected.
+SD=Input Video 1 is Selected
+RE=Input Video 1 Selected
+HS=Input Video 1 is Selected
+]
+[
+ObjTp=Dp
+H=84
+Tp=3
+DT=1
+FD1=High to indicate that Input Video 2 is Selected.
+SD=Input Video 2 is Selected
+RE=Input Video 2 Selected
+HS=Input Video 2 is Selected
+]
+[
+ObjTp=Dp
+H=85
+Tp=3
+DT=1
+FD1=High to indicate that Input Video 3 is Selected.
+SD=Input Video 3 is Selected
+RE=Input Video 3 Selected
+HS=Input Video 3 is Selected
+]
+[
+ObjTp=Dp
+H=86
+Tp=3
+DT=1
+FD1=High to indicate that Input Video 4 is Selected.
+SD=Input Video 4 is Selected
+RE=Input Video 4 Selected
+HS=Input Video 4 is Selected
+]
+[
+ObjTp=Dp
+H=87
+Tp=3
+DT=1
+FD1=High to indicate that Input Video 5 is Selected.
+SD=Input Video 5 is Selected
+RE=Input Video 5 Selected
+HS=Input Video 5 is Selected
+]
+[
+ObjTp=Dp
+H=88
+Tp=3
+DT=1
+FD1=High to indicate that Input Video 6 is Selected.
+SD=Input Video 6 is Selected
+RE=Input Video 6 Selected
+HS=Input Video 6 is Selected
+]
+[
+ObjTp=Dp
+H=89
+Tp=3
+DT=1
+FD1=High to indicate that Input Video 7 is Selected.
+SD=Input Video 7 is Selected
+RE=Input Video 7 Selected
+HS=Input Video 7 is Selected
+]
+[
+ObjTp=Dp
+H=90
+Tp=3
+DT=1
+FD1=High to indicate that Input Video 8 is Selected.
+SD=Input Video 8 is Selected
+RE=Input Video 8 Selected
+HS=Input Video 8 is Selected
+]
+[
+ObjTp=Dp
+H=91
+Tp=3
+DT=1
+FD1=High to indicate that Input Video 9 is Selected.
+SD=Input Video 9 is Selected
+RE=Input Video 9 Selected
+HS=Input Video 9 is Selected
+]
+[
+ObjTp=Dp
+H=92
+Tp=3
+DT=1
+FD1=High to indicate that Input Digital 1 is Selected.
+SD=Input Digital 1 is Selected
+RE=Input Digital 1 Selected
+HS=Input Digital 1 is Selected
+]
+[
+ObjTp=Dp
+H=93
+Tp=3
+DT=1
+FD1=High to indicate that Input Digital 2 is Selected.
+SD=Input Digital 2 is Selected
+RE=Input Digital 2 Selected
+HS=Input Digital 2 is Selected
+]
+[
+ObjTp=Dp
+H=94
+Tp=3
+DT=1
+FD1=High to indicate that Input Digital 3 is Selected.
+SD=Input Digital 3 is Selected
+RE=Input Digital 3 Selected
+HS=Input Digital 3 is Selected
+]
+[
+ObjTp=Dp
+H=95
+Tp=3
+DT=1
+FD1=High to indicate that Input Digital 4 is Selected.
+SD=Input Digital 4 is Selected
+RE=Input Digital 4 Selected
+HS=Input Digital 4 is Selected
+]
+[
+ObjTp=Dp
+H=96
+Tp=3
+DT=1
+FD1=High to indicate that Input Digital 5 is Selected.
+SD=Input Digital 5 is Selected
+RE=Input Digital 5 Selected
+HS=Input Digital 5 is Selected
+]
+[
+ObjTp=Dp
+H=97
+Tp=3
+DT=1
+FD1=High to indicate that Input Digital 6 is Selected.
+SD=Input Digital 6 is Selected
+RE=Input Digital 6 Selected
+HS=Input Digital 6 is Selected
+]
+[
+ObjTp=Dp
+H=98
+Tp=3
+DT=1
+FD1=High to indicate that Input Digital 7 is Selected.
+SD=Input Digital 7 is Selected
+RE=Input Digital 7 Selected
+HS=Input Digital 7 is Selected
+]
+[
+ObjTp=Dp
+H=99
+Tp=3
+DT=1
+FD1=High to indicate that Input Digital 8 is Selected.
+SD=Input Digital 8 is Selected
+RE=Input Digital 8 Selected
+HS=Input Digital 8 is Selected
+]
+[
+ObjTp=Dp
+H=100
+Tp=3
+DT=1
+FD1=High to indicate that Input Digital 9 is Selected.
+SD=Input Digital 9 is Selected
+RE=Input Digital 9 Selected
+HS=Input Digital 9 is Selected
+]
+[
+ObjTp=Dp
+H=101
+Tp=3
+DT=1
+FD1=High to indicate that Input Storage 1 is Selected.
+SD=Input Storage 1 is Selected
+RE=Input Storage 1 Selected
+HS=Input Storage 1 is Selected
+]
+[
+ObjTp=Dp
+H=102
+Tp=3
+DT=1
+FD1=High to indicate that Input Storage 2 is Selected.
+SD=Input Storage 2 is Selected
+RE=Input Storage 2 Selected
+HS=Input Storage 2 is Selected
+]
+[
+ObjTp=Dp
+H=103
+Tp=3
+DT=1
+FD1=High to indicate that Input Storage 3 is Selected.
+SD=Input Storage 3 is Selected
+RE=Input Storage 3 Selected
+HS=Input Storage 3 is Selected
+]
+[
+ObjTp=Dp
+H=104
+Tp=3
+DT=1
+FD1=High to indicate that Input Storage 4 is Selected.
+SD=Input Storage 4 is Selected
+RE=Input Storage 4 Selected
+HS=Input Storage 4 is Selected
+]
+[
+ObjTp=Dp
+H=105
+Tp=3
+DT=1
+FD1=High to indicate that Input Storage 5 is Selected.
+SD=Input Storage 5 is Selected
+RE=Input Storage 5 Selected
+HS=Input Storage 5 is Selected
+]
+[
+ObjTp=Dp
+H=106
+Tp=3
+DT=1
+FD1=High to indicate that Input Storage 6 is Selected.
+SD=Input Storage 6 is Selected
+RE=Input Storage 6 Selected
+HS=Input Storage 6 is Selected
+]
+[
+ObjTp=Dp
+H=107
+Tp=3
+DT=1
+FD1=High to indicate that Input Storage 7 is Selected.
+SD=Input Storage 7 is Selected
+RE=Input Storage 7 Selected
+HS=Input Storage 7 is Selected
+]
+[
+ObjTp=Dp
+H=108
+Tp=3
+DT=1
+FD1=High to indicate that Input Storage 8 is Selected.
+SD=Input Storage 8 is Selected
+RE=Input Storage 8 Selected
+HS=Input Storage 8 is Selected
+]
+[
+ObjTp=Dp
+H=109
+Tp=3
+DT=1
+FD1=High to indicate that Input Storage 9 is Selected.
+SD=Input Storage 9 is Selected
+RE=Input Storage 9 Selected
+HS=Input Storage 9 is Selected
+]
+[
+ObjTp=Dp
+H=110
+Tp=3
+DT=1
+FD1=High to indicate that Input Network 1 is Selected.
+SD=Input Network 1 is Selected
+RE=Input Network 1 Selected
+HS=Input Network 1 is Selected
+]
+[
+ObjTp=Dp
+H=111
+Tp=3
+DT=1
+FD1=High to indicate that Input Network 2 is Selected.
+SD=Input Network 2 is Selected
+RE=Input Network 2 Selected
+HS=Input Network 2 is Selected
+]
+[
+ObjTp=Dp
+H=112
+Tp=3
+DT=1
+FD1=High to indicate that Input Network 3 is Selected.
+SD=Input Network 3 is Selected
+RE=Input Network 3 Selected
+HS=Input Network 3 is Selected
+]
+[
+ObjTp=Dp
+H=113
+Tp=3
+DT=1
+FD1=High to indicate that Input Network 4 is Selected.
+SD=Input Network 4 is Selected
+RE=Input Network 4 Selected
+HS=Input Network 4 is Selected
+]
+[
+ObjTp=Dp
+H=114
+Tp=3
+DT=1
+FD1=High to indicate that Input Network 5 is Selected.
+SD=Input Network 5 is Selected
+RE=Input Network 5 Selected
+HS=Input Network 5 is Selected
+]
+[
+ObjTp=Dp
+H=115
+Tp=3
+DT=1
+FD1=High to indicate that Input Network 6 is Selected.
+SD=Input Network 6 is Selected
+RE=Input Network 6 Selected
+HS=Input Network 6 is Selected
+]
+[
+ObjTp=Dp
+H=116
+Tp=3
+DT=1
+FD1=High to indicate that Input Network 7 is Selected.
+SD=Input Network 7 is Selected
+RE=Input Network 7 Selected
+HS=Input Network 7 is Selected
+]
+[
+ObjTp=Dp
+H=117
+Tp=3
+DT=1
+FD1=High to indicate that Input Network 8 is Selected.
+SD=Input Network 8 is Selected
+RE=Input Network 8 Selected
+HS=Input Network 8 is Selected
+]
+[
+ObjTp=Dp
+H=118
+Tp=3
+DT=1
+FD1=High to indicate that Input Network 9 is Selected.
+SD=Input Network 9 is Selected
+RE=Input Network 9 Selected
+HS=Input Network 9 is Selected
+]
+[
+ObjTp=Dp
+H=119
+Tp=3
+DT=1
+FD1=High to indicate that there is a fan warning.
+SD=Fan warning is active
+RE=Fan warning active
+HS=Fan warning is active
+]
+[
+ObjTp=Dp
+H=120
+Tp=3
+DT=1
+FD1=High to indicate that there is a fan error.
+SD=Fan error is active
+RE=Fan error active
+HS=Fan error is active
+]
+[
+ObjTp=Dp
+H=121
+Tp=3
+DT=1
+FD1=High to indicate that there is a Lamp warning.
+SD=Lamp warning is active
+RE=Lamp warning active
+HS=Lamp warning is active
+]
+[
+ObjTp=Dp
+H=122
+Tp=3
+DT=1
+FD1=High to indicate that there is a Lamp error.
+SD=Lamp error is active
+RE=Lamp error active
+HS=Lamp error is active
+]
+[
+ObjTp=Dp
+H=123
+Tp=3
+DT=1
+FD1=High to indicate that there is a Temperature warning.
+SD=Temperature warning is active
+RE=Temperature warning active
+HS=Temperature warning is active
+]
+[
+ObjTp=Dp
+H=124
+Tp=3
+DT=1
+FD1=High to indicate that there is a Temperature error.
+SD=Temperature error is active
+RE=Temperature error active
+HS=Temperature error is active
+]
+[
+ObjTp=Dp
+H=125
+Tp=3
+DT=1
+FD1=High to indicate that there is a Cover Open warning.
+SD=Cover Open warning is active
+RE=Cover Open warning active
+HS=Cover Open warning is active
+]
+[
+ObjTp=Dp
+H=126
+Tp=3
+DT=1
+FD1=High to indicate that there is a Cover Open error.
+SD=Cover Open error is active
+RE=Cover Open error active
+HS=Cover Open error is active
+]
+[
+ObjTp=Dp
+H=127
+Tp=3
+DT=1
+FD1=High to indicate that there is a Filter warning.
+SD=Filter warning is active
+RE=Filter warning active
+HS=Filter warning is active
+]
+[
+ObjTp=Dp
+H=128
+Tp=3
+DT=1
+FD1=High to indicate that there is a Filter error.
+SD=Filter error is active
+RE=Filter error active
+HS=Filter error is active
+]
+[
+ObjTp=Dp
+H=129
+Tp=3
+DT=1
+FD1=High to indicate that there is an Other warning.
+SD=Other warning is active
+RE=Other warning active
+HS=Other warning is active
+]
+[
+ObjTp=Dp
+H=130
+Tp=3
+DT=1
+FD1=High to indicate that there is an Other error.
+SD=Other error is active
+RE=Other error active
+HS=Other error is active
+]
+[
+ObjTp=Dp
+H=131
+Tp=3
+DT=1
+FD1=High to indicate that the TCP Connection is Connected.
+SD=TCP Connection Connected
+RE=TCP Connection
+HS=TCP Connection Connected
+]
+[
+ObjTp=Dp
+H=132
+Tp=5
+FD1=Analog value containing the TCP/IP Socket status.
+SD=TCP Connection Status
+DNF=1
+]

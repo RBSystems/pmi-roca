@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+	<META NAME="generator" CONTENT="Spider Writer HTML Editor">
+	<TITLE>Document Title</TITLE>
+</HEAD>
+<SCRIPT LANGUAGE="JAVASCRIPT">
+function gen_page(form)
+{
+	aniWindow= window.open("", "Preview", "resizable=1, width=480, height=200");
+	aniWindow.document.open();
+	aniWindow.document.write("<HTML><HEAD>");
+	aniWindow.document.write("<TITLE>PORTMAP HELP PAGE</TITLE>");
+	aniWindow.document.writeln("This is a HELP Page which can be edited separately");
+	aniWindow.document.write("and downloaded to the System.");
+	aniWindow.document.close();
+}	
+
+
+</SCRIPT>
+<BODY onLoad= "gen_page()"></BODY>
+<!-- This is the body of your document -->
+<!-- PLUGIN TO DISPLAY PORTMAPS  STORED IN THE SERVER -->
+&nbsp;<!-webbot bot="HTMLMarkup" startspan --><!-#display_portmap><!-webbot bot="HTMLMarkup" endspan --><br>
+<br>
+
+</BODY>
+</HTML>

@@ -1,0 +1,323 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ram              0x80000000         0x00500000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00000000                __DYNAMIC=0x0
+                0x00400000                PROVIDE (__stack, 0x400000)
+                0x00000000                PROVIDE (hardware_init_hook, 0x0)
+                0x00000000                PROVIDE (_hardware_init_hook, 0x0)
+                0x00000000                PROVIDE (software_init_hook, 0x0)
+                0x00000000                PROVIDE (_software_init_hook, 0x0)
+
+.text           0x80000000    0x11d50
+ *(.text)
+ .text          0x80000000      0x192 S2_serietoanalog.o
+                0x80000000                S2_serietoanalog_EventHandler
+                0x800000bc                S2_serietoanalog_main
+                0x8000012e                S2_serietoanalogEventHandler00000
+ *fill*         0x80000192        0x2
+ .text          0x80000194      0x1ee S2_itoa.o
+                0x80000234                S2_itoa_main
+                0x8000027a                S2_itoaEventHandler00000
+                0x80000194                S2_itoa_EventHandler
+ *fill*         0x80000382        0x2
+ .text          0x80000384     0xaa32 S2_PJLINK.o
+                0x8000ab24                S2_PJLINKAUTODISCONNECT
+                0x8000aa54                S2_PJLINKWAITERSECURE
+                0x8000acc4                S2_PJLINKEventHandler00003
+                0x8000aabc                S2_PJLINKWAITER
+                0x800097d4                S2_PJLINK_EventHandler
+                0x80008de2                S2_PJLINKEventHandler00004
+                0x80008b8c                S2_PJLINKEventHandler00001
+                0x8000990c                S2_PJLINK_main
+                0x8000abf6                S2_PJLINKEventHandler00002
+                0x800088fc                S2_PJLINKEventHandler00000
+ *fill*         0x8000adb6        0x2
+ .text          0x8000adb8     0x5836 library.o
+                0x8000efa4                RotateRightLong
+                0x8000f5b2                IsSystem
+                0x8000ef08                Seed
+                0x8000c800                Remove
+                0x8000eb84                Ltoa
+                0x8000e8b0                Atoi
+                0x8000dc18                InitRampInfoArray
+                0x8000f35e                Right
+                0x8001038e                LockInputSema
+                0x8000ee32                Mod
+                0x8000f01a                Getc
+                0x8000ed66                SMuldiv
+                0x8000f594                IsHidden
+                0x8000ec4a                Min
+                0x800101a2                hextosi
+                0x8000f738                WriteIntegerArray
+                0x8000fcae                GetSignedIntArrayElementPtr
+                0x8000e5d2                CheckStructArray
+                0x800101b6                hextosl
+                0x8000f8be                WriteSignedIntegerArray
+                0x8000e29a                InitStringParamArray
+                0x8000d56c                ReadSignedLongIntegerArray
+                0x8000c48e                GatherToDelimiter
+                0x8000e0be                InitStringArray
+                0x8000ec24                Max
+                0x8000f5ee                IsReadOnly
+                0x8000ed2e                SMax
+                0x8000c632                GatherByLength
+                0x8000eabe                Chr
+                0x8000f710                ReadSignedLongInteger
+                0x8000eb3c                Itohex
+                0x8000e544                GetStructArrayElement
+                0x8000e838                UNS_SetByte
+                0x8000f332                ReverseFindi
+                0x8000da14                ReadStringArray
+                0x8000fabe                GetIntArrayElementPtr
+                0x8000f16e                Lower
+                0x8000ef24                RotateLeft
+                0x800102d6                ResizeIfAutogrow
+                0x8000dd44                CheckInputArray
+                0x8000b326                ResizeStringArray
+                0x8000ea50                Atosl
+                0x8000e878                High
+                0x8000eed4                Rnd
+                0x8000edf6                UMod
+                0x8000ef7a                RotateLeftLong
+                0x80010402                FindNumericChar
+                0x8000ff06                CheckIOArrayBounds2
+                0x8000f54c                MakeProgramFilename
+                0x8000ed4a                SMin
+                0x8000f0a2                Left
+                0x8000efe4                CheckBufferThreshold
+                0x8000f6c8                ReadSignedInteger
+                0x8000e8a2                LowWord
+                0x8000adb8                Bit
+                0x8000f678                ReadLongInteger
+                0x8000e6b6                Byte
+                0x8000fbb6                GetLongArrayElementPtr
+                0x8000f304                ReverseFind
+                0x8000f562                GetSeries
+                0x800104ce                InitTcpServer
+                0x8000f156                Len
+                0x8000ffd6                InitializeRampInfoInternal
+                0x8000ec70                Divide
+                0x8000e9bc                Atol
+                0x8000f558                GetModelNumber
+                0x8000fe9e                CheckIOArrayBounds
+                0x8000dd9e                CheckStringInputArray
+                0x8000f980                WriteSignedLongIntegerArray
+                0x8000e48e                GetStringArrayElement
+                0x8000ebc8                Ltohex
+                0x8000eaf4                Itoa
+                0x8000ef4e                RotateRight
+                0x8000caee                InternalReverseFind
+                0x8000f658                WriteLongInteger
+                0x8000dfc2                InitDynamicStringStruct
+                0x8000deb4                SetStringArray
+                0x8000d34a                ReadSignedIntegerArray
+                0x8000ddf8                SetOutputArray
+                0x8000f608                WriteInteger
+                0x8000e422                InitStructDynamicArray
+                0x8000cd78                SetString
+                0x8000ee6e                Random
+                0x8000f6a0                WriteSignedInteger
+                0x8000b01c                Find
+                0x8000f56c                GetProgramNumber
+                0x8000f242                Mid
+                0x80010440                InitTcpClient
+                0x8000bf0a                ResizeStructArray
+                0x8000fda6                GetSignedLongArrayElementPtr
+                0x800101c8                hextol
+                0x8000d78e                ReadString
+                0x8000e154                InitDynamicStringArray
+                0x800102ae                UpperChar
+                0x8000e94c                Atosi
+                0x8000f630                ReadInteger
+                0x8000ece2                Muldiv
+                0x8000de66                SetStringOutputArray
+                0x8000fa44                WriteString
+                0x8000b97e                ResizeIntegerArray
+                0x8000dd0c                InitInOutArray
+                0x8000e362                InitNvramStringArray
+                0x8000ec0c                Abs
+                0x8000edb2                SDivide
+                0x8000cf08                ReadIntegerArray
+                0x8000aec8                CompareStrings
+                0x80010286                LowerChar
+                0x8001055e                InitUdpSocket
+                0x8000efcc                ClearBuffer
+                0x8000f41a                Upper
+                0x8000e3fe                InitStructArray
+                0x8000f4f0                MakeLower
+                0x8000f5d0                IsVolume
+                0x8000c95a                RemoveByLength
+                0x8000e64e                CheckStringOutputArrayIndex
+                0x8000f7fa                WriteLongIntegerArray
+                0x80010082                InitRampInfoStructArray
+                0x8000e894                HighWord
+                0x8000b190                ResizeString
+                0x8000f576                IsDirectory
+                0x8000d128                ReadLongIntegerArray
+                0x8000e886                Low
+                0x8000c334                Gather
+                0x8000f51e                MakeUpper
+                0x8000df84                InitStringStruct
+                0x8000ff6e                CheckStringArrayBounds
+                0x8000ecb4                CheckDenominator
+                0x8001018a                hextoi
+                0x8000d8ac                WriteStringArray
+                0x8000e776                SetByte
+                0x8001002c                InitializeRampInfo
+                0x800103c8                UnLockInputSema
+                0x8000f6f0                WriteSignedLongInteger
+                0x8000e076                InitNvramStringStruct
+ *fill*         0x800105ee        0x2
+                0x800105f0                .=ALIGN(0x10)
+ *(.eh_frame)
+                0x800105f0                .=ALIGN(0x10)
+ *(.gnu.linkonce.t.*)
+                0x800105f0                .=ALIGN(0x4)
+                0x800105f0                __CTOR_LIST__=.
+                0x800105f0                ___CTOR_LIST__=.
+                0x800105f0        0x4 LONG 0x0 (((__CTOR_END__-__CTOR_LIST__)/0x4)-0x2)
+ *(.ctors)
+                0x800105f4        0x4 LONG 0x0
+                0x800105f8                __CTOR_END__=.
+                0x800105f8                __DTOR_LIST__=.
+                0x800105f8                ___DTOR_LIST__=.
+                0x800105f8        0x4 LONG 0x0 (((__DTOR_END__-__DTOR_LIST__)/0x4)-0x2)
+ *(.dtors)
+                0x800105fc        0x4 LONG 0x0
+                0x80010600                __DTOR_END__=.
+ *(.rodata)
+ .rodata        0x80010600      0x23e S2_serietoanalog.o
+ .rodata        0x8001083e      0x270 S2_itoa.o
+ .rodata        0x80010aae      0x632 S2_PJLINK.o
+ .rodata        0x800110e0      0xc54 library.o
+ *(.gcc_except_table)
+                0x80011d34                .=ALIGN(0x2)
+                0x80011d34                __INIT_SECTION__=.
+                0x80011d34        0x4 LONG 0x4e560000
+ *(.init)
+                0x80011d38        0x2 SHORT 0x4e5e
+                0x80011d3a        0x2 SHORT 0x4e75
+                0x80011d3c                __FINI_SECTION__=.
+                0x80011d3c        0x4 LONG 0x4e560000
+ *(.fini)
+                0x80011d40        0x2 SHORT 0x4e5e
+                0x80011d42        0x2 SHORT 0x4e75
+ *(.lit)
+ *fill*         0x80011d44        0xc
+                0x80011d50                .=ALIGN(0x10)
+                0x80011d50                _etext=.
+                0x80011d50                etext=.
+
+.data           0x80011d50        0x0
+                0x80011d50                copy_start=.
+ *(.shdata)
+ *(.data)
+ *(.gnu.linkonce.d.*)
+                0x80011d50                .=ALIGN(0x10)
+                0x80011d50                _edata=.
+                0x80011d50                copy_end=.
+
+.got
+ *(.got.plt)
+ *(.got)
+
+EntryList       0x80011d50      0x330
+ *(EntryList)
+ EntryList      0x80011d50      0x110 S2_serietoanalog.o
+                0x80011d50                S2_serietoanalog_Entry
+ EntryList      0x80011e60      0x110 S2_itoa.o
+                0x80011e60                S2_itoa_Entry
+ EntryList      0x80011f70      0x110 S2_PJLINK.o
+                0x80011f70                S2_PJLINK_Entry
+                0x80012080                .=ALIGN(0x4)
+
+FunctionList    0x80012080        0x4
+ *(FunctionList)
+ FunctionList   0x80012080        0x4 globals.o
+                0x80012080                g_pFunctions
+                0x80012084                .=ALIGN(0x4)
+
+.bss            0x80012084        0x0
+                0x80012084                .=ALIGN(0x4)
+                0x80012084                __bss_start=.
+ *(.shbss)
+ *(.bss)
+ *(COMMON)
+                0x80012088                _end=ALIGN(0x8)
+                0x80012088                __end=_end
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+LOAD S2_serietoanalog.o
+LOAD S2_itoa.o
+LOAD S2_PJLINK.o
+LOAD globals.o
+LOAD library.o
+OUTPUT(_S2_20130322RocaLondres.spl elf32-m68k)
+
+.comment        0x80012084       0xbe
+ .comment       0x80012084       0x26 S2_serietoanalog.o
+ .comment       0x800120aa       0x26 S2_itoa.o
+ .comment       0x800120d0       0x26 S2_PJLINK.o
+ .comment       0x800120f6       0x26 globals.o
+ .comment       0x8001211c       0x26 library.o

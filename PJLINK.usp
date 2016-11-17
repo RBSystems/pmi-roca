@@ -1,0 +1,626 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+  (Fill in comments below)
+*******************************************************************************************/
+/*
+Dealer Name: Crestron International
+System Name: PJLink
+Programmer: BVD  						
+Comments: 	Module based on the basic PJLink module of Brad Cleal, with credit to Nathan Hesson for re-coding the MD5 protocol from Java into Simpl+ and then releasing it.
+			Nathans Hesson MD5 generator based on the code found on this webpage: http://pajhome.org.uk/crypt/md5/index.html
+			PJLINK Protocol based on this official webdoc: http://pjlink.jbmia.or.jp/english/data/PJLink%20Specifications100.pdf
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+  (Uncomment and declare compiler directives as needed)
+*******************************************************************************************/
+// #ENABLE_DYNAMIC
+// #SYMBOL_NAME ""
+// #HINT ""
+
+#DEFINE_CONSTANT FALSE        0
+#DEFINE_CONSTANT TRUE         1
+#DEFINE_CONSTANT diClientReconnectEnable 0
+#DEFINE_CONSTANT disconnectTime 1000 //10s
+#DEFINE_CONSTANT Header "\x25\x31"
+
+// #CATEGORY "" 
+#ENABLE_DYNAMIC
+#DEFAULT_VOLATILE
+// #PRINT_TO_TRACE
+// #DIGITAL_EXPAND 
+// #ANALOG_SERIAL_EXPAND 
+#OUTPUT_SHIFT 3
+// #HELP_PDF_FILE ""
+// #DEFAULT_NONVOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+/*******************************************************************************************
+  Include Libraries
+  (Uncomment and include additional libraries as needed)
+*******************************************************************************************/
+// #CRESTRON_LIBRARY ""
+// #USER_LIBRARY ""
+
+/*******************************************************************************************
+  DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+  (Uncomment and declare inputs and outputs as needed)
+*******************************************************************************************/
+DIGITAL_INPUT _SKIP_,_SKIP_,_SKIP_;
+STRING_INPUT Command$[15];
+
+DIGITAL_OUTPUT doClientConnected, _SKIP_,Lamp1On$ ,Lamp2On$ ,_SKIP_;
+DIGITAL_OUTPUT FanWarning$ ,FanError$ ,LampWarning$, LampError$, TemperatureWarning$ ,TemperatureError$ ,CoverOpenWarning$ ,CoverOpenError$ ,FilterWarning$ ,FilterError$ ,OtherWarning$ ,OtherError$; 
+
+ANALOG_OUTPUT  _SKIP_,aoClientStatus, _SKIP_, InputFeedback$, _SKIP_;
+ANALOG_OUTPUT  Lamp1Hours$, Lamp2Hours$, _SKIP_;
+STRING_OUTPUT  SendToSimpleWindows$;
+
+
+/*******************************************************************************************
+  SOCKETS
+  (Uncomment and define socket definitions as needed)
+*******************************************************************************************/
+TCP_CLIENT MyClient[1024];
+// TCP_SERVER
+// UDP_SOCKET
+
+/*******************************************************************************************
+  Parameters
+  (Uncomment and declare parameters as needed)
+*******************************************************************************************/
+INTEGER_PARAMETER Projector_TCPIP_PortNumber;
+STRING_PARAMETER Projector_IP_Address[256];
+STRING_PARAMETER PJLinkPassword[256];//"JBMIAProjectorLink"
+// SIGNED_INTEGER_PARAMETER
+// LONG_INTEGER_PARAMETER
+// SIGNED_LONG_INTEGER_PARAMETER
+
+
+/*******************************************************************************************
+  Parameter Properties
+  (Uncomment and declare parameter properties as needed)
+*******************************************************************************************/
+
+#BEGIN_PARAMETER_PROPERTIES PJLinkPassword
+    propValidUnits =  unitString;
+   propDefaultUnit = unitString;
+   // propBounds = lower_bound , upper_bound;
+   propDefaultValue = "JBMIAProjectorLink";
+   // propList = // { "value" , "label" } , { "value" , "label" } , ... ;
+   // propShortDescription = "status_bar_hint_text";
+   // #BEGIN_PROP_FULL_DESCRIPTION  line_1...  line_2...  line_n  #END_PROP_FULL_DESCRIPTION
+   // #BEGIN_PROP_NOTES line_1...  line_2...  line_n  #END_PROP_NOTES
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES Projector_TCPIP_PortNumber
+    propValidUnits =  unitDecimal;
+   propDefaultUnit = unitDecimal;
+   // propBounds = lower_bound , upper_bound;
+   propDefaultValue = 4352d;
+   // propList = // { "value" , "label" } , { "value" , "label" } , ... ;
+   // propShortDescription = "status_bar_hint_text";
+   // #BEGIN_PROP_FULL_DESCRIPTION  line_1...  line_2...  line_n  #END_PROP_FULL_DESCRIPTION
+   // #BEGIN_PROP_NOTES line_1...  line_2...  line_n  #END_PROP_NOTES
+#END_PARAMETER_PROPERTIES
+
+
+/*******************************************************************************************
+  Global Variables
+  (Uncomment and declare global variables as needed)
+  Note:  Be sure to initialize all declared STRING variables as needed
+         For example, in Function Main: myString = "";
+*******************************************************************************************/
+STRING sClientRx$[256],CommandValue$[256],ReplyErr$[256],ReplyValue$[256],rndm$[256];
+STRING CommandList[512], RXCommand[512],NextCommand[256],ReplyOK[256];
+INTEGER hex_tab[16],Rxvalue,iStartClient;
+INTEGER RXoK,ProcessingCommands, ReplyAck, HelpRX, Query;
+SIGNED_LONG_INTEGER chrsz, bin[2000], binArray[4];
+
+
+/*******************************************************************************************
+  Functions
+  (Add any additional functions here)
+  Note:  Functions must be physically placed before the location in
+         the code that calls them.
+*******************************************************************************************/
+ 
+ //MD5 Generator Script
+
+STRING_FUNCTION binl2hex() {
+	INTEGER i;
+	STRING str[128];
+	i = 0;
+	WHILE(i < 16) 
+	{
+		str = str + CHR(hex_tab[binArray[i>>2] >> ((i%4)*8+4) & 0xF]) + CHR(hex_tab[binArray[i>>2] >> ((i%4)*8) & 0xF]);
+		i = i+1;
+	}
+	
+	RETURN(str);
+}
+
+SIGNED_LONG_INTEGER_FUNCTION safe_add(SIGNED_LONG_INTEGER x, SIGNED_LONG_INTEGER y) 
+{
+	SIGNED_LONG_INTEGER lsw, msw;
+	lsw = (x & 0xFFFF) + (y & 0xFFFF);
+	msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+	
+	RETURN((msw << 16) | (lsw & 0xFFFF));
+}
+
+SIGNED_LONG_INTEGER_FUNCTION bit_rol(SIGNED_LONG_INTEGER num, SIGNED_INTEGER cnt) 
+{
+	RETURN(RotateLeftLong(num, cnt) | RotateRightLong(num, (32 - cnt)));
+}
+
+SIGNED_LONG_INTEGER_FUNCTION md5_cmn(SIGNED_LONG_INTEGER q, SIGNED_LONG_INTEGER a, SIGNED_LONG_INTEGER b, SIGNED_LONG_INTEGER x, SIGNED_INTEGER s, SIGNED_LONG_INTEGER t) 
+{
+	RETURN(safe_add(bit_rol(safe_add(safe_add(a,q),safe_add(x,t)),s),b));
+}
+
+SIGNED_LONG_INTEGER_FUNCTION md5_ff(SIGNED_LONG_INTEGER a, SIGNED_LONG_INTEGER b, SIGNED_LONG_INTEGER c, SIGNED_LONG_INTEGER d, SIGNED_LONG_INTEGER x, SIGNED_INTEGER s, SIGNED_LONG_INTEGER t) 
+{
+	RETURN(md5_cmn(((b & c) | (NOT(b) & d)), a, b, x, s, t));
+}
+
+SIGNED_LONG_INTEGER_FUNCTION md5_gg(SIGNED_LONG_INTEGER a, SIGNED_LONG_INTEGER b, SIGNED_LONG_INTEGER c, SIGNED_LONG_INTEGER d, SIGNED_LONG_INTEGER x, SIGNED_INTEGER s, SIGNED_LONG_INTEGER t) 
+{
+	RETURN(md5_cmn((b & d) | (c & (NOT(d))), a, b, x, s, t));
+}
+
+SIGNED_LONG_INTEGER_FUNCTION md5_hh(SIGNED_LONG_INTEGER a, SIGNED_LONG_INTEGER b, SIGNED_LONG_INTEGER c, SIGNED_LONG_INTEGER d, SIGNED_LONG_INTEGER x, SIGNED_INTEGER s, SIGNED_LONG_INTEGER t) 
+{
+	RETURN(md5_cmn(b ^ c ^ d, a, b, x, s, t));
+}
+
+SIGNED_LONG_INTEGER_FUNCTION md5_ii(SIGNED_LONG_INTEGER a, SIGNED_LONG_INTEGER b, SIGNED_LONG_INTEGER c, SIGNED_LONG_INTEGER d, SIGNED_LONG_INTEGER x, SIGNED_INTEGER s, SIGNED_LONG_INTEGER t) 
+{
+	RETURN(md5_cmn(c ^ (b | (NOT(d))), a, b, x, s, t));
+}
+
+
+STRING_FUNCTION core_md5(INTEGER length) {
+	INTEGER i;
+	SIGNED_LONG_INTEGER a, b, c, d, oldA, oldB, oldC, oldD;
+	bin[length>>5] = bin[length>>5] | 0x80 << ((length) % 32);
+	bin[(((length + 64) >> 9) {{ 4) + 14] = length;
+
+	a = 1732584193;
+	b = -271733879;
+	c = -1732584194;
+	d = 271733878;
+
+	i = 0;
+	WHILE(i < 15) 
+	{
+		oldA = a;
+		oldB = b;
+		oldC = c;
+		oldD = d;
+
+		a = md5_ff(a, b, c, d, bin[i+ 0], 7, -680876936);
+		d = md5_ff(d, a, b, c, bin[i+ 1], 12, -389564586);
+		c = md5_ff(c, d, a, b, bin[i+ 2], 17, 606105819);
+		b = md5_ff(b, c, d, a, bin[i+ 3], 22, -1044525330);
+		a = md5_ff(a, b, c, d, bin[i+ 4], 7 , -176418897);
+		d = md5_ff(d, a, b, c, bin[i+ 5], 12,  1200080426);
+		c = md5_ff(c, d, a, b, bin[i+ 6], 17, -1473231341);
+		b = md5_ff(b, c, d, a, bin[i+ 7], 22, -45705983);
+		a = md5_ff(a, b, c, d, bin[i+ 8], 7 ,  1770035416);
+		d = md5_ff(d, a, b, c, bin[i+ 9], 12, -1958414417);
+		c = md5_ff(c, d, a, b, bin[i+10], 17, -42063);
+		b = md5_ff(b, c, d, a, bin[i+11], 22, -1990404162);
+		a = md5_ff(a, b, c, d, bin[i+12], 7 ,  1804603682);
+		d = md5_ff(d, a, b, c, bin[i+13], 12, -40341101);
+		c = md5_ff(c, d, a, b, bin[i+14], 17, -1502002290);
+		b = md5_ff(b, c, d, a, bin[i+15], 22,  1236535329);
+
+		a = md5_gg(a, b, c, d, bin[i+ 1], 5 , -165796510);
+		d = md5_gg(d, a, b, c, bin[i+ 6], 9 , -1069501632);
+		c = md5_gg(c, d, a, b, bin[i+11], 14,  643717713);
+		b = md5_gg(b, c, d, a, bin[i+ 0], 20, -373897302);
+		a = md5_gg(a, b, c, d, bin[i+ 5], 5 , -701558691);
+		d = md5_gg(d, a, b, c, bin[i+10], 9 ,  38016083);
+		c = md5_gg(c, d, a, b, bin[i+15], 14, -660478335);
+		b = md5_gg(b, c, d, a, bin[i+ 4], 20, -405537848);
+		a = md5_gg(a, b, c, d, bin[i+ 9], 5 ,  568446438);
+		d = md5_gg(d, a, b, c, bin[i+14], 9 , -1019803690);
+		c = md5_gg(c, d, a, b, bin[i+ 3], 14, -187363961);
+		b = md5_gg(b, c, d, a, bin[i+ 8], 20,  1163531501);
+		a = md5_gg(a, b, c, d, bin[i+13], 5 , -1444681467);
+		d = md5_gg(d, a, b, c, bin[i+ 2], 9 , -51403784);
+		c = md5_gg(c, d, a, b, bin[i+ 7], 14,  1735328473);
+		b = md5_gg(b, c, d, a, bin[i+12], 20, -1926607734);
+
+		a = md5_hh(a, b, c, d, bin[i+ 5], 4 , -378558);
+		d = md5_hh(d, a, b, c, bin[i+ 8], 11, -2022574463);
+		c = md5_hh(c, d, a, b, bin[i+11], 16,  1839030562);
+		b = md5_hh(b, c, d, a, bin[i+14], 23, -35309556);
+		a = md5_hh(a, b, c, d, bin[i+ 1], 4 , -1530992060);
+		d = md5_hh(d, a, b, c, bin[i+ 4], 11,  1272893353);
+		c = md5_hh(c, d, a, b, bin[i+ 7], 16, -155497632);
+		b = md5_hh(b, c, d, a, bin[i+10], 23, -1094730640);
+		a = md5_hh(a, b, c, d, bin[i+13], 4 ,  681279174);
+		d = md5_hh(d, a, b, c, bin[i+ 0], 11, -358537222);
+		c = md5_hh(c, d, a, b, bin[i+ 3], 16, -722521979);
+		b = md5_hh(b, c, d, a, bin[i+ 6], 23,  76029189);
+		a = md5_hh(a, b, c, d, bin[i+ 9], 4 , -640364487);
+		d = md5_hh(d, a, b, c, bin[i+12], 11, -421815835);
+		c = md5_hh(c, d, a, b, bin[i+15], 16,  530742520);
+		b = md5_hh(b, c, d, a, bin[i+ 2], 23, -995338651);
+
+		a = md5_ii(a, b, c, d, bin[i+ 0], 6 , -198630844);
+		d = md5_ii(d, a, b, c, bin[i+ 7], 10,  1126891415);
+		c = md5_ii(c, d, a, b, bin[i+14], 15, -1416354905);
+		b = md5_ii(b, c, d, a, bin[i+ 5], 21, -57434055);
+		a = md5_ii(a, b, c, d, bin[i+12], 6 ,  1700485571);
+		d = md5_ii(d, a, b, c, bin[i+ 3], 10, -1894986606);
+		c = md5_ii(c, d, a, b, bin[i+10], 15, -1051523);
+		b = md5_ii(b, c, d, a, bin[i+ 1], 21, -2054922799);
+		a = md5_ii(a, b, c, d, bin[i+ 8], 6 ,  1873313359);
+		d = md5_ii(d, a, b, c, bin[i+15], 10, -30611744);
+		c = md5_ii(c, d, a, b, bin[i+ 06], 15, -1560198380);
+		b = md5_ii(b, c, d, a, bin[i+13], 21,  1309151649);
+		a = md5_ii(a, b, c, d, bin[i+ 4], 6 , -145523070);
+		d = md5_ii(d, a, b, c, bin[i+11], 10, -1120210379);
+		c = md5_ii(c, d, a, b, bin[i+ 2], 15,  718787259);
+		b = md5_ii(b, c, d, a, bin[i+ 9], 21, -343485551);
+
+		a = safe_add(a, oldA);
+		b = safe_add(b, oldB);
+		c = safe_add(c, oldC);
+		d = safe_add(d, oldD);
+
+		i = i + 16;
+	}
+	binArray[0] = a;
+	binArray[1] = b;
+	binArray[2] = c;
+	binArray[3] = d;
+}
+
+FUNCTION str2binl(STRING str) 
+{
+	INTEGER i, mask;
+	SIGNED_LONG_INTEGER one, temp$;
+	
+	one = 1;
+	mask = (one << chrsz) - 1;
+	i = 0;
+	WHILE(i < LEN(str) * chrsz) 
+	{
+		bin[i>>5] = bin[i>>5] | ((BYTE(str, (i / 8)+1) & mask) << (i%32));
+		i = i + 8;
+	}
+}
+
+STRING_FUNCTION hex_md5(STRING s) 
+{
+	setArray(bin, 0);
+	str2binl(s);
+	core_md5(LEN(s) * LowWord(chrsz));
+	RETURN(binl2hex());
+}
+
+
+//TCP/IP Projector Control 
+
+Integer_Function fStartClient()
+{
+    SIGNED_INTEGER istatus;
+	
+	iStartClient=1;
+    istatus = SocketConnectClient (MyClient, Projector_IP_Address, Projector_TCPIP_PortNumber, diClientReconnectEnable);
+    Return(istatus);//0=success, negative number=err
+}
+
+Integer_Function fStopClient()
+{
+    SIGNED_INTEGER istatus;
+    
+	delay(5);
+	iStartClient=0;
+    istatus = SocketDisconnectClient(MyClient);
+    Return(istatus);//0=success, negative number=err
+}
+
+Integer_Function fClientTX(string ClientTx$)
+{
+    SIGNED_INTEGER iStatus;
+    
+    iStatus = SocketSend(MyClient, ClientTx$ );  	
+    Return(istatus);//0=success, positive value=success, negative number=err
+}
+
+String_Function GetNextCommand()
+{
+    Integer marker1;
+    
+    NextCommand = remove("\r",CommandList);  
+    marker1 = find(" ",NextCommand)-1;
+    Query = find("?",NextCommand);
+    if (Query)
+    {
+     	ReplyOK = Header + left(NextCommand,marker1) + "=";
+    }
+    else
+    {
+		ReplyOK = Header + left(NextCommand,marker1) + "=OK\r";
+	}
+    
+    Return(NextCommand);
+}
+function SendSecure(string lrndm$)
+{
+	string UnEncoded$[256],MD5Encoded$[256];
+	
+	makestring(UnEncoded$,"%s%s",lrndm$,PJLinkPassword);
+	makestring(MD5Encoded$,"%s%s%s",hex_md5(UnEncoded$),Header,GetNextCommand());
+	fClientTX(MD5Encoded$);
+	wait(500,waiterSecure)
+    {
+      ReplyAck = 1;
+      trace("No Ack received on secured transmission");
+    }
+}
+
+function SendNonSecure()
+{
+	string NonMD5Encoded$[256];
+	makestring(NonMD5Encoded$,"%s%s",Header,GetNextCommand());
+	fClientTX(NonMD5Encoded$);
+}
+
+function StartProcessingCommands()
+{
+	ProcessingCommands = 1;
+	while (len(CommandList) && iStartClient)//(aoClientStatus = 2))
+	{
+		if (ReplyAck)
+		{	    
+		    ReplyAck = 0;
+		 	SendNonSecure();
+		 	wait(200,waiter)
+		    {
+		      ReplyAck = 1;
+		      trace("No Ack received on non secured transmission");
+		    }	  
+		}
+		delay(50); 	
+	}
+    ProcessingCommands = 0;
+}
+
+Function ProcessQuery(String FeedbackCommand) 
+{
+ 	String Keyword[10];
+ 	Integer marker1,marker2;
+ 	
+ 	marker1 = find("=",FeedbackCommand);
+ 	marker2 = len(FeedbackCommand);
+ 	
+ 	Keyword = left(FeedbackCommand,marker1);
+ 	if (Keyword = "%1INPT=")
+ 	{
+ 	  InputFeedback$ = AtoI(mid(FeedbackCommand,marker1+1,marker2-1)); 
+ 	}
+ 	else if (Keyword = "%1LAMP=")
+ 	{
+ 	    marker2 = find(" ",FeedbackCommand);
+ 	    Lamp1Hours$ = AtoI(mid(FeedbackCommand,marker1+1, marker2-(marker1+1)) );
+ 	    Lamp1On$ = AtoI(mid(FeedbackCommand,marker2+1,1));
+ 	    marker1 = find(" ",FeedbackCommand,marker2+1);		
+		
+		if (marker1)
+		{
+			marker2 = find(" ",FeedbackCommand,marker1+1);
+			Lamp2Hours$ = AtoI(mid(FeedbackCommand,marker2, marker2-(marker1+1)) );
+			Lamp2On$ = AtoI(mid(FeedbackCommand,marker2+1,1));	 	
+		} 
+ 	}
+ 	else if (Keyword = "%1ERST=")
+ 	{
+ 	 	
+ 	 	if (byte(FeedbackCommand,8)='1')
+ 	 		FanWarning$ = 1;
+ 	 	else if (byte(FeedbackCommand,8)='2')
+ 	 		FanError$ = 1;
+        
+        if (byte(FeedbackCommand,9)='1')
+ 	 		LampWarning$ = 1;
+ 	 	else if (byte(FeedbackCommand,9)='2')
+ 	 		LampError$ = 1;
+        
+        if (byte(FeedbackCommand,10)='1')
+ 	 		TemperatureWarning$ = 1;
+ 	 	else if (byte(FeedbackCommand,10)='2')
+ 	 		TemperatureError$ = 1;
+        
+        if (byte(FeedbackCommand,11)='1')
+ 	 		CoverOpenWarning$ = 1;
+ 	 	else if (byte(FeedbackCommand,11)='2')
+ 	 		CoverOpenError$ = 1; 
+ 	 		
+        if (byte(FeedbackCommand,12)='1')
+ 	 		FilterWarning$ = 1;
+ 	 	else if (byte(FeedbackCommand,12)='2')
+ 	 		FilterError$ = 1;
+
+        if (byte(FeedbackCommand,13)='1')
+ 	 		OtherWarning$ = 1;
+ 	 	else if (byte(FeedbackCommand,13)='2')
+ 	 		OtherError$ = 1;	 		        	
+ 	}
+ 	else
+ 	{
+ 		SendToSimpleWindows$ = FeedbackCommand; 	
+ 	} 	
+}
+
+/*******************************************************************************************
+  Event Handlers
+  (Uncomment and declare additional event handlers as needed)
+*******************************************************************************************/
+
+CHANGE Command$
+{
+	CommandList = CommandList +  Command$ + "\r"; 
+	if (!ProcessingCommands && aoClientStatus = 2)
+	{
+		StartProcessingCommands();
+	}
+	else if ((aoClientStatus !=2) && (!iStartClient))
+	{
+		fStartClient();
+		StartProcessingCommands();
+	}
+}
+
+SOCKETCONNECT MyClient
+{
+    SIGNED_LONG_INTEGER PortNumber;
+    SIGNED_INTEGER LocalStatus;
+    STRING RemoteIPAddress[20];
+    STRING RequestedAddress[256];
+
+    doClientConnected = 1;
+    LocalStatus = SocketGetAddressAsRequested(MyClient, RequestedAddress);
+    if (LocalStatus < 0)
+        trace("Client: Error getting remote ip address. %d\n", LocalStatus); 
+
+    PortNumber = SocketGetPortNumber(MyClient);
+    if (PortNumber < 0)
+        trace("Client: Error getting client port number. %ld\n", PortNumber);
+
+    LocalStatus = SocketGetRemoteIPAddress(MyClient, RemoteIPAddress);
+    if (LocalStatus < 0)
+        trace("Client: Error getting remote ip address. %d\n", LocalStatus);
+}
+
+SOCKETDISCONNECT MyClient
+{
+    ReplyAck = 0;
+    doClientConnected = 0;
+    if (iStartClient)
+    {
+        trace("Client: Socket disconnected remotely");
+    	iStartClient = 0;
+    }
+}
+
+SOCKETSTATUS MyClient
+{
+    SIGNED_INTEGER Status;   
+
+    Status = SocketGetStatus();
+	if(Status=2)
+	{
+		wait(disconnectTime,autodisconnect)
+		{
+			fStopClient();
+		}
+	} 
+	else
+	{
+		cancelwait(autodisconnect);
+	}
+    aoClientStatus = Status;
+}
+
+SOCKETRECEIVE MyClient
+{
+	integer ReplyErrLen,ReplyValueLen; 
+    IF(RXoK)
+	{
+		RXoK = 0;
+		while( find("\x0D",MyClient.SocketRxBuf) > 0)
+		{
+         	RXCommand = remove("\x0D",MyClient.SocketRxBuf);
+			while (len(RXCommand))
+			{
+				IF((left(RXCommand,1) = "%") || (left(RXCommand,6)="PJLINK"))
+				{ 
+					if (find("ERR",RXCommand))
+					{
+					 	CancelWait(waiterSecure);
+					 	CancelWait(waiter);
+					 	ReplyAck = 1; 
+					 	trace("Command not supported or Unit is turned Off");
+					}
+					else if(RXCommand = ReplyOK)
+					{
+						CancelWait(waiter);
+						CancelWait(waiterSecure);
+						ReplyAck = 1; 
+					}
+					else if ((left(RXCommand,len(ReplyOK)) = ReplyOK) && Query) 
+					{
+						ProcessQuery(RXCommand); 
+						CancelWait(waiter);
+						ReplyAck = 1; 
+					}
+					else if(left(RXCommand,8)="PJLINK 1")
+					{
+						rndm$ = mid(RXCommand,10,len(RXCommand)-10); 
+						SendSecure(rndm$); 
+					}
+					else if(left(RXCommand,8)="PJLINK 0")
+					{
+						SendNonSecure(); 
+					}
+					else if(RXCommand="PJLINK ERRA\x0D")
+					{
+						trace("error in authentication");
+					}
+					
+					retimewait(disconnectTime,autodisconnect);
+					ClearBuffer(RXCommand);
+	            } // end if % = first character
+	            else
+	            {
+	             	HelpRX = GetC(RXCommand);
+	            }
+			} // end while when something is still in command	
+ 		}  // end while find \x0D in received buffer -->> means still a command to process
+ 		RXoK = 1; 
+ 	} // end RXoK guard
+}
+
+
+/*******************************************************************************************
+  Main()
+  Uncomment and place one-time startup code here
+  (This code will get called when the system starts up)
+*******************************************************************************************/
+
+Function Main()
+{
+	chrsz = 8; 
+	RXoK = 1; 
+	ProcessingCommands = 0;
+	Query = 0;
+	ReplyAck = 0;
+	
+	hex_tab[0] = 48;
+	hex_tab[1] = 49;
+	hex_tab[2] = 50;
+	hex_tab[3] = 51;
+	hex_tab[4] = 52;
+	hex_tab[5] = 53;
+	hex_tab[6] = 54;
+	hex_tab[7] = 55;
+	hex_tab[8] = 56;
+	hex_tab[9] = 57;
+	hex_tab[10] = 97;
+	hex_tab[11] = 98;
+	hex_tab[12] = 99;
+	hex_tab[13] = 100;
+	hex_tab[14] = 101;
+	hex_tab[15] = 102;
+}
+
+
+

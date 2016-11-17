@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- WORDING ACROSS TITLE BAR -->
+<title>NAT Configuration</title>
+</head>
+
+
+
+<!-- PLUGIN TO DISPLAY PORTMAPS  STORED IN THE SERVER -->
+&nbsp;<!-webbot bot="HTMLMarkup" startspan --><!-#display_portmap ><!-webbot bot="HTMLMarkup" endspan --><br>
+<br>
+
+</html>
